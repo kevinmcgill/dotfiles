@@ -1,8 +1,10 @@
-##Installation:
+# Dotfiles
+
+## Installation:
 
     git clone git://github.com/kevinmcgill/dotfiles.git ~/Sites/Work/dotfiles
 
-##Create symlinks:
+## Create symlinks:
 
     ln -s ~/Sites/Work/dotfiles/vimrc ~/.vimrc
     ln -s ~/Sites/Work/dotfiles/vim ~/.vim
