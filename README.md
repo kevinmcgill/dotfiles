@@ -6,10 +6,10 @@
 
 ## Create symlinks:
 
-    ln -s ~/Sites/Work/dotfiles/vimrc ~/.vimrc
+    ln -s ~/Sites/Work/dotfiles/.vimrc ~/.vimrc
     ln -s ~/Sites/Work/dotfiles/vim ~/.vim
-    ln -s ~/Sites/Work/dotfiles/bash_profile ~/.bash_profile
-    ln -s ~/Sites/Work/dotfiles/gitconfig ~/.gitconfig
+    ln -s ~/Sites/Work/dotfiles/.bash_profile ~/.bash_profile
+    ln -s ~/Sites/Work/dotfiles/.gitconfig ~/.gitconfig
 
 You may need to delete `~/.vim` if it already exists.
 
