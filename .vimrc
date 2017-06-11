@@ -32,3 +32,6 @@ highlight htmlArg cterm=italic
 " Ensure that italics carry over if I ever switch light/dark scheme
 autocmd ColorScheme * highlight! Comment cterm=italic
 autocmd ColorScheme * highlight! htmlArg cterm=italic
+
+" CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
