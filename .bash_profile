@@ -2,6 +2,10 @@
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# Imported from existing bash_profile on office machine, disabled here...
+# export PATH=/usr/local/bin:$PATH
+# export PATH="/usr/local/opt/openssl/bin:$PATH"
+
 # Prompt is scrappy. I’d love to know how to do this properly.
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
