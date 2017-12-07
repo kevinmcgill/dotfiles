@@ -60,5 +60,7 @@
   whitespace = warn
 [push]
   default = current
+[pull]
+  rebase = true
 [help]
   autocorrect = 1
