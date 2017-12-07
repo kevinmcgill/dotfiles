@@ -23,3 +23,8 @@ PS1="$GREEN\u$NO_COLOUR \e[3min $BLUE\w$NO_COLOUR \e[3mon$YELLOW\$(parse_git_bra
 # Aliases
 alias ll="ls -lhFG"
 alias la="ls -alhFG"
+
+# load .bashrc only if shell is interactive
+case $- in
+   *i*) source ~/.bashrc
+esac
