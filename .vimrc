@@ -27,7 +27,9 @@ set showmatch
 " 256 colours please
 set t_Co=256
 " Solarized colour scheme...
-colorscheme solarized
+"colorscheme solarized
+" Jellybeans colour scheme
+colorscheme jellybeans
 " ...with a dark background
 set background=dark
 " Italicised comments and attributes
