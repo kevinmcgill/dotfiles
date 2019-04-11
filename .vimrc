@@ -116,7 +116,7 @@ set title
 set list
 set listchars=tab:»-,trail:·
 " Set relative line numbers...
-set relativenumber
+"set relativenumber
 " ...but absolute numbers on the current line (hybrid numbering)
 set number
 " Force the cursor onto a new line after 80 characters
@@ -128,7 +128,7 @@ autocmd FileType gitcommit set textwidth=72
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
 " Highlight current line
-set cursorline
+" set cursorline!
 
 
 
