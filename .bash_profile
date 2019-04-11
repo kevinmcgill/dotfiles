@@ -2,6 +2,8 @@
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion # brew install bash-completion
+
 # Imported from existing bash_profile on office machine, disabled here...
 # export PATH=/usr/local/bin:$PATH
 # export PATH="/usr/local/opt/openssl/bin:$PATH"
