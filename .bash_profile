@@ -30,3 +30,5 @@ alias la="ls -alhFG"
 case $- in
    *i*) source ~/.bashrc
 esac
+export PATH="/usr/local/opt/freetds@0.91/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
