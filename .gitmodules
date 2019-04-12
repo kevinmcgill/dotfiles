@@ -13,3 +13,6 @@
 [submodule "vim/bundle/jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
+[submodule "vim/bundle/surround"]
+  path = vim/bundle/surround
+  url = git@github.com:tpope/vim-surround.git
