@@ -19,3 +19,6 @@
 [submodule "vim/bundle/start"]
 	path = vim/bundle/start
 	url = git@github.com:tpope/vim-dispatch.git
+[submodule "vim/bundle/bundler"]
+	path = vim/bundle/bundler
+	url = git@github.com:tpope/vim-bundler.git
