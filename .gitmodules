@@ -16,3 +16,6 @@
 [submodule "vim/bundle/surround"]
   path = vim/bundle/surround
   url = git@github.com:tpope/vim-surround.git
+[submodule "vim/bundle/start"]
+	path = vim/bundle/start
+	url = git@github.com:tpope/vim-dispatch.git
