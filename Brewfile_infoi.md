@@ -1,3 +1,4 @@
+```
 ➜  ~ brew list
 ==> Formulae
 abseil                  gflags                  libevent                m4                      python-setuptools
@@ -45,3 +46,4 @@ gettext                 libev                   lzo                     pyenv
 1password                       docker                          slack
 1password-cli                   font-symbols-only-nerd-font     tower
 chromium                        pgadmin4                        visual-studio-code
+```
