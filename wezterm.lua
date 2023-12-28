@@ -15,7 +15,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night Storm'
-config.font = wezterm.font 'BlexMono NF'
+config.font = wezterm.font 'BlexMono Nerd Font Mono'
 config.font_size = 14
 
 config.hide_tab_bar_if_only_one_tab = true
