@@ -10,6 +10,7 @@
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.config/wezterm/wezterm.lua: wezterm.lua
+    ~/.gitconfig: gitconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
