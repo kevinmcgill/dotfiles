@@ -1,3 +1,5 @@
+Running brew list on existing work laptop.
+
 ```
 ➜  ~ brew list
 ==> Formulae
