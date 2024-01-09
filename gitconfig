@@ -36,11 +36,11 @@
   # See everything everyone has done recently
   overview = log --oneline --no-merges
   # See everything I have done recently
-  recap = log --oneline --no-merges --author=kevmcgill@gmail.com --author=kevin.mcgill@mable.com.au
+  recap = log --oneline --no-merges --author=kevmcgill@gmail.com --author=kevin.mcgill@hotdoc.com.au
   # Show very last commit
   last = log --oneline -1
   # See today’s work
-  today = log --since=\"00:00:00\" --all --no-merges --oneline --author=kevmcgill@gmail.com --author=kevin.mcgill@mable.com.au
+  today = log --since=\"00:00:00\" --all --no-merges --oneline --author=kevmcgill@gmail.com --author=kevin.mcgill@hotdoc.com.au
   # Empty line between results from different files.
   find = "!git grep --break -C1"
   # Show your ten most recently checked out branches
