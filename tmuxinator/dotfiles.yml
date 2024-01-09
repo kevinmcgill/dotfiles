@@ -1,0 +1,8 @@
+name: dotfiles
+root: ~/.config/
+
+windows:
+  - neovim:
+    - cd nvim
+    - nvim .
+

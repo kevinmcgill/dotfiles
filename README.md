@@ -1,20 +1,13 @@
 # Dotfiles
 
-## Installation:
+## Requirements
 
-    git clone git://github.com/kevinmcgill/dotfiles.git ~/Sites/Work/dotfiles
+Run `./setup/init.sh` to install tools and applications on a new mac.
 
-## Create symlinks:
+## Dotbot
 
-    ln -s ~/Sites/Work/dotfiles/.vimrc ~/.vimrc
-    ln -s ~/Sites/Work/dotfiles/vim ~/.vim
-    ln -s ~/Sites/Work/dotfiles/.bash_profile ~/.bash_profile
-    ln -s ~/Sites/Work/dotfiles/.gitconfig ~/.gitconfig
+I am using [dotbot](https://github.com/anishathalye/dotbot)https://github.com/anishathalye/dotbot to bootstrap & manage my dotfiles.
 
-You may need to delete `~/.vim` if it already exists.
-
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
+```shell
+./install
+```
