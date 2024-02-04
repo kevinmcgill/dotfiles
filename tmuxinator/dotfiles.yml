@@ -1,8 +1,12 @@
 name: dotfiles
-root: ~/.config/
+root: ~/Sites/dotfiles/
 
 windows:
   - neovim:
     - cd nvim
     - nvim .
+  - terminal:
+    - la
+  - git:
+    - lazygit
 

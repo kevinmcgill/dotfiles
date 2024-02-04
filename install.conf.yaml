@@ -6,6 +6,7 @@
 
 - link:
     ~/.tmux.conf: tmux.conf
+    ~/.config/tmuxinator: tmuxinator
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.config/wezterm/wezterm.lua: wezterm.lua

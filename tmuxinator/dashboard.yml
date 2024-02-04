@@ -1,0 +1,14 @@
+name: dashboard
+root: ~/Sites/hotdoc-ember-dashboard/
+
+windows:
+  - code:
+    - nvim .
+  - server:
+    - bin/bootstrap
+    - yarn start --proxy=http://127.0.0.1:5000 # `yarn start` will auto proxy to `localhost:5000`, but I've had issues in the past with this
+  - terminal:
+    - la
+  - git:
+    - lazygit
+

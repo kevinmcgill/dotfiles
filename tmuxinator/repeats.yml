@@ -1,0 +1,15 @@
+name: repeats
+root: ~/Sites/elixir_scripts/
+
+windows:
+  - code:
+    - nvim .
+  - server:
+    # - mix deps.get
+    # - mix ecto.migrate
+    - mix phx.server
+  - terminal:
+    - la
+  - git:
+    - lazygit
+

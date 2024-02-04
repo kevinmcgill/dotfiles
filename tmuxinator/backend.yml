@@ -1,20 +1,17 @@
 name: backend
-root: ~/Sites/better_caring/
+root: ~/Sites/hotdoc-rails-backend/
 
 windows:
   - code:
     - nvim .
   - console:
-    - echo "bundle exec rails console"
-    - tmux wait docker
-    - make shell && bin/rails console
+    - bin/rails console
   - server:
-    - echo 'RAILS_RELATIVE_URL_ROOT=/app FACEOFF_BASE_PATH="" rails s'
-    - make dev-env-up && tmux wait -S docker
-  - sidekiq:
-    - echo "bundle exec sidekiq -C ./config/sidekiq.yml"
-    - tmux wait docker
-    - make sidekiq
+    - bin/dev
+  - terminal:
+    - la
+  - git:
+    - lazygit
   - docs:
       panes:
         - nvim *.md
