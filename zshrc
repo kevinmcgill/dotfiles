@@ -39,9 +39,9 @@ alias bi="bundle install"
 
 # Tmux
 alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new -t"
+alias ta="tmux a -t"
+alias tls="tmux ls"
+alias tn="tmux new -t"
 alias tx="tmuxinator" # eg `tx s work`
 
 # Add wezterm to the path so that we can use wezterm commands like `wezterm ls-fonts`
