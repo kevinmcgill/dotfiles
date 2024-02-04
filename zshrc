@@ -26,6 +26,7 @@ export EDITOR='/opt/homebrew/bin/nvim'
 # General
 alias cat="bat"
 alias grep="grep --color=auto"
+alias lg="lazygit"
 
 # Ruby
 alias rspec="bundle exec rspec"
