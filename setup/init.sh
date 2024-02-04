@@ -24,19 +24,19 @@ fi
 
 # Node.js
 echo "Installing Node.js"
-source ./nodejs.sh
+source ./setup/nodejs.sh
 
 # Python
 echo "Installing Python"
-source ./python.sh
+source ./setup/python.sh
 
 # Lua
 echo "Installing Lua"
-source ./lua.sh
+source ./setup/lua.sh
 
 # Ruby
 echo "Installing Ruby"
-source ./ruby.sh
+source ./setup/ruby.sh
 
 # Homebrew
 if test ! $(which brew); then
@@ -46,4 +46,4 @@ fi
 
 # Homebrew packages, Cask binaries and Mac App Store software
 echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
-source ./brew.sh
+source ./setup/brew.sh
