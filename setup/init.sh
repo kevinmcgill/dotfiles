@@ -38,6 +38,10 @@ source ./setup/lua.sh
 echo "Installing Ruby"
 source ./setup/ruby.sh
 
+# Elixir
+echo "Installing Elixir"
+source ./setup/elixir.sh
+
 # Homebrew
 if test ! $(which brew); then
 	echo "Installing Homebrew"
