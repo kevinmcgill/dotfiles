@@ -9,6 +9,7 @@
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.config/wezterm/wezterm.lua: wezterm.lua
+    ~/.config/bat/config: bat_config
     ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: gitconfig
 
