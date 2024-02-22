@@ -34,7 +34,7 @@ alias pra="bundle exec parallel_rspec spec engines/hotdoc-rails-writebacks/spec 
 alias prf="bundle exec parallel_rspec -o '--only-failures'" # run only specs that failed in last run
 alias prd="git diff --name-only master | xargs ls -1 2>/dev/null | grep '\_spec.rb$' | xargs bundle exec parallel_rspec" # run only specs that differ from master
 alias prs="git diff --name-only --cached | xargs ls -1 2>/dev/null | grep '\_spec.rb$' | xargs bundle exec parallel_rspec" # run only specs that are staged to commit
-
+alias routes="bin/rails routes | fzf -e"
 alias bi="bundle install"
 
 # Tmux
