@@ -8,6 +8,15 @@
 require "irb/completion"
 IRB.conf[:USE_AUTOCOMPLETE] = ENV["RAILS_ENV"] == "development"
 
+# configure autocomplete dialog colors
+if defined? Reline::Face
+  Reline::Face.config(:completion_dialog) do |conf|
+    conf.define(:default, foreground: "#cad3f5", background: "#363a4f")
+    conf.define(:enhanced, foreground: "#cad3f5", background: "#5b6078")
+    conf.define(:scrollbar, foreground: "#c6a0f6", background: "#181926")
+  end
+end
+
 # Don't save history on staging/prod as it's an ephemeral read-only filesystem.
 if ENV["RAILS_ENV"] != "development"
   IRB.conf[:SAVE_HISTORY] = nil # Override default 1000 line history.
