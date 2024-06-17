@@ -2,14 +2,14 @@ name: repeats
 root: ~/Sites/elixir_scripts/
 
 windows:
+  - git:
+    - lazygit
   - code:
     - nvim .
   - server:
     # - mix deps.get
     # - mix ecto.migrate
-    - mix phx.server
+    - bin/dev
   - terminal:
     - la
-  - git:
-    - lazygit
 

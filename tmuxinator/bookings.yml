@@ -2,13 +2,13 @@ name: bookings
 root: ~/Sites/hotdoc-ember-bookings/
 
 windows:
+  - git:
+    - lazygit
   - code:
     - nvim .
   - server:
     - bin/bootstrap
-    - pnpm start --proxy=http://127.0.0.1:5000
+    - bin/dev
   - terminal:
     - la
-  - git:
-    - lazygit
 

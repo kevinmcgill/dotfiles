@@ -1,5 +1,5 @@
-name: backend
-root: ~/Sites/hotdoc-rails-backend/
+name: coffee
+root: ~/Sites/coffeecompass/
 
 windows:
   - git:

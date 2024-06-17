@@ -2,11 +2,11 @@ name: dotfiles
 root: ~/Sites/dotfiles/
 
 windows:
+  - git:
+    - lazygit
   - neovim:
     - cd nvim
     - nvim .
   - terminal:
     - la
-  - git:
-    - lazygit
 
