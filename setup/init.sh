@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Get the directory of the current script
+SCRIPT_DIR=$(dirname "$0")
+
 # One-time prompt for password.
 echo "Setting up the Mac"
 sudo -v
@@ -24,23 +27,28 @@ fi
 
 # Node.js
 echo "Installing Node.js"
-source ./setup/nodejs.sh
+# Source the nodejs.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/nodejs.sh"
 
 # Python
 echo "Installing Python"
-source ./setup/python.sh
+# Source the python.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/python.sh"
 
 # Lua
 echo "Installing Lua"
-source ./setup/lua.sh
+# Source the lua.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/lua.sh"
 
 # Ruby
 echo "Installing Ruby"
-source ./setup/ruby.sh
+# Source the ruby.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/ruby.sh"
 
 # Elixir
 echo "Installing Elixir"
-source ./setup/elixir.sh
+# Source the elixir.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/elixir.sh"
 
 # Homebrew
 if test ! $(which brew); then
