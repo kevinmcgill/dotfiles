@@ -51,7 +51,7 @@ source "$SCRIPT_DIR/elixir.sh"
 # Homebrew
 if test ! $(which brew); then
 	echo "Installing Homebrew"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Homebrew packages, Cask binaries and Mac App Store software
