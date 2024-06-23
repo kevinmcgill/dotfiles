@@ -58,4 +58,4 @@ fi
 
 # Homebrew packages, Cask binaries and Mac App Store software
 echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
-source ./setup/brew.sh
+source "$SCRIPT_DIR/brew.sh"
