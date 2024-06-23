@@ -43,11 +43,6 @@ echo "Installing Lua"
 # Source the lua.sh script relative to the SCRIPT_DIR
 source "$SCRIPT_DIR/lua.sh"
 
-# Ruby
-echo "Installing Ruby"
-# Source the ruby.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/ruby.sh"
-
 # Elixir
 echo "Installing Elixir"
 # Source the elixir.sh script relative to the SCRIPT_DIR
@@ -62,3 +57,8 @@ fi
 # Homebrew packages, Cask binaries and Mac App Store software
 echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
 source "$SCRIPT_DIR/brew.sh"
+
+# Ruby
+echo "Installing Ruby"
+# Source the ruby.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/ruby.sh"
