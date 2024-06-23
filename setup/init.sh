@@ -22,7 +22,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # asdf
 if [ ! -d "$HOME/.asdf" ]; then
   echo "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 fi
 
 # Node.js
