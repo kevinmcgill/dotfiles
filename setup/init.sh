@@ -28,6 +28,15 @@ if [ ! -d "$HOME/.asdf" ]; then
   grep -qxF '. "$HOME/.asdf/asdf.sh"' ~/.zshrc || echo '. "$HOME/.asdf/asdf.sh"' >> ~/.zshrc
 fi
 
+# Homebrew
+if ! command -v brew &>/dev/null; then
+	echo "Installing Homebrew"
+	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	# Add Homebrew to PATH for the current session
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Node.js
 echo "Installing Node.js"
 # Source the nodejs.sh script relative to the SCRIPT_DIR
@@ -48,17 +57,11 @@ echo "Installing Elixir"
 # Source the elixir.sh script relative to the SCRIPT_DIR
 source "$SCRIPT_DIR/elixir.sh"
 
-# Homebrew
-if test ! $(which brew); then
-	echo "Installing Homebrew"
-	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-
-# Homebrew packages, Cask binaries and Mac App Store software
-echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
-source "$SCRIPT_DIR/brew.sh"
-
 # Ruby
 echo "Installing Ruby"
 # Source the ruby.sh script relative to the SCRIPT_DIR
 source "$SCRIPT_DIR/ruby.sh"
+
+# Homebrew packages, Cask binaries and Mac App Store software
+echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
+source "$SCRIPT_DIR/brew.sh"
