@@ -10,11 +10,21 @@
     ~/.irbrc: irbrc
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
-    ~/.config/atuin: atuin
-    ~/.config/bat: bat
-    ~/.config/nvim: nvim
-    ~/.config/tmuxinator: tmuxinator
-    ~/.config/wezterm: wezterm
+    ~/.config/atuin:
+        path: atuin
+        create: true
+    ~/.config/bat:
+        path: bat
+        create: true
+    ~/.config/nvim:
+        path: nvim
+        create: true
+    ~/.config/tmuxinator:
+        path: tmuxinator
+        create: true
+    ~/.config/wezterm:
+        path: wezterm
+        create: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
