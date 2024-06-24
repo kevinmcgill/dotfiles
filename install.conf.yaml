@@ -10,10 +10,10 @@
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.config/wezterm/wezterm.lua: wezterm.lua
-    ~/.config/bat/config: bat_config
     ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: gitconfig
     ~/.irbrc: irbrc
+    ~/.config/bat: bat
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
