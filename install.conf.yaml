@@ -6,13 +6,13 @@
 
 - link:
     ~/.tmux.conf: tmux.conf
-    ~/.config/tmuxinator: tmuxinator
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: gitconfig
     ~/.irbrc: irbrc
     ~/.config/bat: bat
+    ~/.config/tmuxinator: tmuxinator
     ~/.config/wezterm: wezterm
 
 - shell:
