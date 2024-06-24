@@ -9,7 +9,9 @@
     ~/.gitconfig: gitconfig
     ~/.irbrc: irbrc
     ~/.tmux.conf: tmux.conf
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+        path: zshrc
+        force: true
     ~/.config/atuin:
         path: atuin
         create: true
