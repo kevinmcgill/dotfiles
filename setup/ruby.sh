@@ -13,5 +13,8 @@ asdf plugin add ruby
 asdf install ruby 3.3.3
 asdf global ruby 3.3.3
 
+# Re-source ASDF to ensure the installed Ruby version is available
+. "$HOME/.asdf/asdf.sh"
+
 # Install gems using the absolute path to the Gemfile
 bundle install --gemfile="$GEMFILE_PATH"
