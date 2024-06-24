@@ -1,5 +1,5 @@
 #!/bin/sh
 
 asdf plugin add python
-asdf install python latest
-asdf global python latest
+asdf install python 3.12.4
+asdf global python 3.12.4
