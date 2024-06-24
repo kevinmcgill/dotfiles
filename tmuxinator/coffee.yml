@@ -1,5 +1,5 @@
 name: coffee
-root: ~/Sites/coffeecompass/
+root: ~/Sites/coffee-compass/
 
 windows:
   - git:
