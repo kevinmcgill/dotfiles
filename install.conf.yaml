@@ -9,11 +9,11 @@
     ~/.config/tmuxinator: tmuxinator
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
-    ~/.config/wezterm/wezterm.lua: wezterm.lua
     ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: gitconfig
     ~/.irbrc: irbrc
     ~/.config/bat: bat
+    ~/.config/wezterm: wezterm
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
