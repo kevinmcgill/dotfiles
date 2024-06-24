@@ -10,6 +10,7 @@
     ~/.irbrc: irbrc
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
+    ~/.config/atuin: atuin
     ~/.config/bat: bat
     ~/.config/nvim: nvim
     ~/.config/tmuxinator: tmuxinator
