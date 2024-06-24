@@ -1,7 +1,5 @@
 # Taps: additional repositories of formulae
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 
 # Brews or Formulae: the command-line tools you want to install
