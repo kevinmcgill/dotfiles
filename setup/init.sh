@@ -30,11 +30,11 @@ fi
 
 # Homebrew
 if ! command -v brew &>/dev/null; then
-	echo "Installing Homebrew"
-	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Installing Homebrew"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	# Add Homebrew to PATH for the current session
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Add Homebrew to PATH for the current session
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Node.js
