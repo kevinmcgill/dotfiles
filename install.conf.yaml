@@ -21,6 +21,9 @@
     ~/.config/nvim:
         path: nvim
         create: true
+    ~/.config/rubocop:
+        path: rubocop
+        create: true
     ~/.config/tmuxinator:
         path: tmuxinator
         create: true

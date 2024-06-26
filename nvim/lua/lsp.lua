@@ -3,7 +3,12 @@ local servers = {
   eslint = {},
   ember = {},
   standardrb = {},
-  ruby_lsp = {},
+  ruby_lsp = {
+    ruby = {
+      formatter = "standard",
+      linters = "standard",
+    },
+  },
   solargraph = {},
   lua_ls = {
     Lua = {
