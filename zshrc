@@ -29,8 +29,7 @@ alias grep="grep --color=auto"
 alias lg="lazygit"
 
 # Ruby
-alias rspec="bundle exec rspec"
-alias pra="bundle exec parallel_rspec spec engines/hotdoc-rails-writebacks/spec engines/hotdoc-rails-reminders/spec engines/hotdoc-rails-recalls/spec" # whole suite in parallel
+alias rs="bundle exec rspec"
 alias prf="bundle exec parallel_rspec -o '--only-failures'" # run only specs that failed in last run
 alias prd="git diff --name-only master | xargs ls -1 2>/dev/null | grep '\_spec.rb$' | xargs bundle exec parallel_rspec" # run only specs that differ from master
 alias prs="git diff --name-only --cached | xargs ls -1 2>/dev/null | grep '\_spec.rb$' | xargs bundle exec parallel_rspec" # run only specs that are staged to commit
