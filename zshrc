@@ -23,6 +23,9 @@ source $ZSH/oh-my-zsh.sh
 # Set Neovim as default editor
 export EDITOR='/opt/homebrew/bin/nvim'
 
+# Set the default config directory
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # General
 alias cat="bat"
 alias grep="grep --color=auto"
