@@ -84,6 +84,8 @@ cask "1password-cli"
 cask "dash"
 cask "font-blex-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
+# Team communication and collaboration software
+cask "slack"
 # Native GUI tool for relational databases
 cask "tableplus"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
