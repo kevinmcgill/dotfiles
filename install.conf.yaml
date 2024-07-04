@@ -19,6 +19,9 @@
     ~/.config/bat:
         path: bat
         create: true
+    ~/.config/lazygit:
+        path: lazygit
+        create: true
     ~/.config/nvim:
         path: nvim
         create: true
