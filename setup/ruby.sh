@@ -10,8 +10,8 @@ GEMFILE_PATH=$(cd "$SCRIPT_DIR/../ruby" && pwd)/Gemfile
 brew install openssl readline libyaml gmp
 
 asdf plugin add ruby
-asdf install ruby 3.3.3
-asdf global ruby 3.3.3
+asdf install ruby 3.3.4
+asdf global ruby 3.3.4
 
 # Re-source ASDF to ensure the installed Ruby version is available
 . "$HOME/.asdf/asdf.sh"
