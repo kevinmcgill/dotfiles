@@ -32,6 +32,8 @@ brew "direnv"
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Library for encoding and decoding .avif files
+brew "libavif"
 # GitHub command-line tool
 brew "gh"
 # OpenType text shaping engine
@@ -80,6 +82,8 @@ brew "yarn"
 brew "zlib"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Web browser focusing on privacy
+cask "brave-browser"
 # API documentation browser and code snippet manager
 cask "dash"
 cask "font-blex-mono-nerd-font"
