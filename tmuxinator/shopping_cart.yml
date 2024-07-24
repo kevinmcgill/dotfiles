@@ -1,0 +1,13 @@
+name: shopping_cart
+root: ~/Sites/marketplacer_shopping_cart/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - console:
+    - irb
+  - terminal:
+    - la
+
