@@ -11,7 +11,14 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-        automatic_installation = true,
+        ensure_installed = {
+          "eslint",
+          "tsserver",
+          "lua_ls",
+          "jsonls",
+          "yamlls",
+        },
+        automatic_installation = { exclude = { "ruby_lsp", "solargraph", "standardrb", "rubocop" } }, -- true, except for those listed
       })
     end,
   },
@@ -19,92 +26,115 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       { "j-hui/fidget.nvim", opts = {} },
-
       -- Schema information
       "b0o/SchemaStore.nvim",
     },
     config = function()
-      -- local signs = {
-      --   { name = "DiagnosticSignError", text = "" },
-      --   { name = "DiagnosticSignWarn", text = "" },
-      --   { name = "DiagnosticSignInfo", text = "" },
-      --   { name = "DiagnosticSignHint", text = "" },
-      -- }
-      --
-      -- for _, sign in ipairs(signs) do
-      --   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-      -- end
-      --
-      -- local config = {
-      --   virtual_text = {
-      --     severity = {
-      --       min = vim.diagnostic.severity.WARN,
-      --     },
-      --   },
-      --   signs = {
-      --     active = signs,
-      --   },
-      --   underline = {
-      --     severity = {
-      --       min = vim.diagnostic.severity.WARN,
-      --     },
-      --   },
-      -- }
-      --
-      -- vim.diagnostic.config(config)
+      -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local mason_lspconfig = require("mason-lspconfig")
+      local lspconfig = require("lspconfig")
 
-      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      --   border = "rounded",
-      -- })
-      --
-      -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      --   border = "rounded",
-      -- })
+      -- LSP configuration without Mason
 
-      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-      -- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-      --
-      -- local lspconfig = require("lspconfig")
-      --
-      -- lspconfig.lua_ls.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.tsserver.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.eslint.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.ember.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.standardrb.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- temporary disable ruby lsp as rubocop diagnostics are appearing instead of standardrb.
-      -- this happened after updating to neovim 0.10
-      -- lspconfig.ruby_lsp.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.solargraph.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- Global mappings.
-      -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-      -- vim.keymap.set("n", "gl", vim.diagnostic.open_float)
-      -- -- Use LspAttach autocommand to only map the following keys
-      -- -- after the language server attaches to the current buffer
-      -- vim.api.nvim_create_autocmd("LspAttach", {
-      --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-      --   callback = function(ev)
-      --     -- Buffer local mappings.
-      --     -- See `:help vim.lsp.*` for documentation on any of the below functions
-      --     local opts = { buffer = ev.buf }
-      --     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-      --     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-      --     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-      --   end,
-      -- })
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruby_lsp
+      lspconfig.ruby_lsp.setup({
+        -- Server-specific settings. See `:help lspconfig-setup`
+        capabilities = capabilities,
+        cmd = { "asdf", "exec", "ruby-lsp" },
+        init_options = {
+          formatter = "auto", -- or "standard" or "rubocop" or "auto"
+        },
+      })
+
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
+      lspconfig.solargraph.setup({
+        -- Server-specific settings. See `:help lspconfig-setup`
+        capabilities = capabilities,
+        cmd = { "asdf", "exec", "solargraph", "stdio" },
+        init_options = {
+          formatting = false, -- use ruby_lsp for formatting
+        },
+        settings = {
+          solargraph = {
+            diagnostics = false,
+          },
+        },
+      })
+
+      lspconfig.standardrb.setup({
+        -- Server-specific settings. See `:help lspconfig-setup`
+        capabilities = capabilities,
+      })
+
+      -- END of LSP configuration without Mason
+
+      -- LSP configuration with Mason
+
+      -- Setup and configure LSP servers installed via Mason. Ruby LSP servers are manually configured separately.
+      local handlers = {
+        -- The first entry (without a key) will be the default handler
+        -- and will be called for each installed server that doesn't have
+        -- a dedicated handler.
+        function(server_name) -- default handler (optional)
+          require("lspconfig")[server_name].setup({
+            capabilities = capabilities,
+          })
+        end,
+        -- Next, you can provide targeted overrides for specific servers.
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls
+        ["jsonls"] = function()
+          lspconfig.jsonls.setup({
+            capabilities = capabilities,
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          })
+        end,
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
+        ["lua_ls"] = function()
+          lspconfig.lua_ls.setup({
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                -- https://luals.github.io/wiki/settings/
+                diagnostics = { globals = { "vim" } },
+                telemetry = { enable = false },
+              },
+            },
+          })
+        end,
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+        ["yamlls"] = function()
+          lspconfig.yamlls.setup({
+            capabilities = capabilities,
+            settings = {
+              yaml = {
+                -- https://github.com/redhat-developer/yaml-language-server?tab=readme-ov-file#language-server-settings
+                schemaStore = {
+                  enable = false,
+                  url = "",
+                },
+                schemas = require("schemastore").yaml.schemas(),
+              },
+            },
+          })
+        end,
+      }
+
+      -- now setup the custom handlers
+      mason_lspconfig.setup_handlers(handlers)
+
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "rounded",
+      })
+
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = "rounded",
+      })
     end,
   },
 }

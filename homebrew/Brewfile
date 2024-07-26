@@ -68,6 +68,8 @@ brew "redis"
 brew "ripgrep"
 # Database of common MIME types
 brew "shared-mime-info"
+# Opinionated Lua code formatter
+brew "stylua"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
