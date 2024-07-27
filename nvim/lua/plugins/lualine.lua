@@ -3,7 +3,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "dracula",
+        theme = "tokyonight-storm",
       },
       sections = {
         lualine_c = { { "filename", path = 1, shorting_target = "40" } },
