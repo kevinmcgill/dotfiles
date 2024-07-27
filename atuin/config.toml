@@ -172,3 +172,7 @@ keymap_mode = "vim-insert"
 #
 # Set commands that should be totally stripped and ignored from stats
 #common_prefix = ["sudo"]
+
+[theme]
+# See https://docs.atuin.sh/guide/theming/
+name = "marine"
