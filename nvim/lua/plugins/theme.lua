@@ -26,6 +26,6 @@ return { -- You can easily change to a different colorscheme.
 
     -- change the line number color to a light gray
     vim.cmd("set norelativenumber") -- disable relative line number for now, otherwise the colors change won't work
-    vim.api.nvim_set_hl(0, 'LineNr', { bold = true, fg = '#999999', bg = 'NONE' })
+    vim.api.nvim_set_hl(0, "LineNr", { bold = true, fg = "#999999", bg = "NONE" })
   end,
 }

@@ -21,7 +21,7 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", opts)
 vim.api.nvim_set_keymap("n", "<leader>d", ":bprevious|bdelete #<CR>", opts)
 
 -- Clear highlighted search results
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Navigate buffers
 vim.api.nvim_set_keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -56,9 +56,9 @@ vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", opt
 vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", opts)
 -- copy path to clipboard
 vim.api.nvim_create_user_command("CopyBufPath", function()
-    local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
 --LSP
@@ -71,20 +71,20 @@ vim.api.nvim_set_keymap("n", "<leader>gl", ":lua vim.diagnostic.open_float()<CR>
 vim.api.nvim_set_keymap("n", "<leader>gf", ":lua vim.lsp.buf.format()<CR>", opts)
 
 vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
-    pattern = { "*" },
-    callback = function()
-        if vim.opt.buftype:get() == "terminal" then
-            vim.cmd(":startinsert")
-        end
+  pattern = { "*" },
+  callback = function()
+    if vim.opt.buftype:get() == "terminal" then
+      vim.cmd(":startinsert")
     end
+  end,
 })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,

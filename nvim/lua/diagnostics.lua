@@ -12,7 +12,7 @@ end
 local config = {
   virtual_text = {
     severity = {
-      min = vim.diagnostic.severity.WARN
+      min = vim.diagnostic.severity.WARN,
     },
   },
   signs = {

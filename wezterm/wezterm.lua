@@ -1,6 +1,5 @@
-
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This table will hold the configuration.
 local config = {}
@@ -14,17 +13,17 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Dracula (Official)'
-config.font = wezterm.font 'BlexMono Nerd Font Mono'
+config.color_scheme = "Dracula (Official)"
+config.font = wezterm.font("BlexMono Nerd Font Mono")
 config.font_size = 14
 
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_padding = {
-  left = '0cell',
-  right = '0cell',
-  top = '0cell',
-  bottom = '0cell',
+  left = "0cell",
+  right = "0cell",
+  top = "0cell",
+  bottom = "0cell",
 }
 -- and finally, return the configuration to wezterm
 return config
