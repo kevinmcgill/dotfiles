@@ -89,6 +89,7 @@ cask "brave-browser"
 # API documentation browser and code snippet manager
 cask "dash"
 cask "font-blex-mono-nerd-font"
+cask "font-monaspace-nerd-font"
 cask "font-symbols-only-nerd-font"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
