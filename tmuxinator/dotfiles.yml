@@ -5,7 +5,6 @@ windows:
   - git:
     - lazygit
   - neovim:
-    - cd nvim
     - nvim .
   - terminal:
     - la
