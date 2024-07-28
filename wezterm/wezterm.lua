@@ -14,8 +14,20 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = "Tokyo Night Storm"
-config.font = wezterm.font("MonaspiceNe Nerd Font Mono")
-config.font_size = 14
+
+-- Set Github Monospace font, patched with Nerd Fonts
+-- https://monaspace.githubnext.com
+-- config.font = wezterm.font("MonaspiceNe Nerd Font Mono") -- Neon: Neo-grotesque sans
+config.font = wezterm.font("MonaspiceAr Nerd Font Mono", { weight = "Thin" }) -- Argon: Humanist sans
+-- config.font = wezterm.font("MonaspiceXe Nerd Font Mono") -- Xenon: Slav serif
+-- config.font = wezterm.font("MonaspiceKr Nerd Font Mono") -- Krypton: Mechanical sans
+config.font_rules = {
+  {
+    italic = true,
+    font = wezterm.font('MonaspiceRn Nerd Font Mono'), -- Radon: Handwriting
+  },
+}
+config.font_size = 16
 config.line_height = 1.1
 
 config.hide_tab_bar_if_only_one_tab = true
