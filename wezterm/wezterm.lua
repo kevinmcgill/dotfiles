@@ -27,7 +27,7 @@ config.font_rules = {
     font = wezterm.font('MonaspiceRn Nerd Font Mono'), -- Radon: Handwriting
   },
 }
-config.font_size = 16
+config.font_size = 15
 config.line_height = 1.1
 
 config.hide_tab_bar_if_only_one_tab = true
