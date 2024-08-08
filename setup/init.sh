@@ -35,6 +35,16 @@ if ! command -v brew &>/dev/null; then
 
   # Add Homebrew to PATH for the current session
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  
+  # Add Homebrew to PATH in .zprofile if not already present
+  if [ ! -f "$HOME/.zprofile" ]; then
+    touch "$HOME/.zprofile"
+  fi
+
+  if ! grep -q 'eval "$(/opt/homebrew/bin/brew shellenv)"' "$HOME/.zprofile"; then
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
+    echo "Added Homebrew to PATH in .zprofile"
+  fi
 fi
 
 # Node.js
