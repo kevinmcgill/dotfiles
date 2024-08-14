@@ -43,3 +43,5 @@
   rebase = true
 [help]
   autocorrect = 1
+[gpg "ssh"]
+  allowedSignersFile = /Users/kevinmcgill/.ssh/allowed_signers
