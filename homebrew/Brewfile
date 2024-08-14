@@ -88,6 +88,8 @@ cask "1password-cli"
 cask "brave-browser"
 # API documentation browser and code snippet manager
 cask "dash"
+# Web browser
+cask "firefox"
 cask "font-blex-mono-nerd-font"
 cask "font-monaspace-nerd-font"
 cask "font-symbols-only-nerd-font"
