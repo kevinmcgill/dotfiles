@@ -1,0 +1,15 @@
+name: marketplacer
+root: ~/Sites/marketplacer/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - console:
+    # - bin/rails console
+  - server:
+    # - bin/dev
+  - terminal:
+    - la
+
