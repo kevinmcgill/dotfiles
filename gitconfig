@@ -45,3 +45,8 @@
   autocorrect = 1
 [gpg "ssh"]
   allowedSignersFile = /Users/kevinmcgill/.ssh/allowed_signers
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
