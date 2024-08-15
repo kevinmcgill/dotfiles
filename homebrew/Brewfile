@@ -4,6 +4,10 @@ tap "homebrew/services"
 brew "atuin"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault"
+# Mozilla CA certificate store
+brew "ca-certificates"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Library for command-line editing
@@ -24,10 +28,14 @@ brew "coreutils"
 brew "gnutls"
 # Emacs dependency management
 brew "cask"
+# Cross-platform make
+brew "cmake"
 # Fix common misspellings in source code and text files
 brew "codespell"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Isolated development environments using Docker
+brew "docker-compose"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -36,12 +44,16 @@ brew "fzf"
 brew "libavif"
 # GitHub command-line tool
 brew "gh"
+# Git extension for versioning large files
+brew "git-lfs"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Popular GNU data compression program
+brew "gzip"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
@@ -50,18 +62,28 @@ brew "k9s"
 brew "kubernetes-cli"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Fast and powerful Git hooks manager for any type of projects
+brew "lefthook"
 # X.509 and CMS library
 brew "libksba"
 # NaCl networking and cryptography library
 brew "libsodium"
 # YAML Parser
 brew "libyaml"
+# General-purpose lossless data-compression library
+brew "zlib"
+# Open source relational database management system
+brew "mysql@8.0"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Object-relational database system
 brew "postgresql@14"
+# Monitor data's progress through a pipe
+brew "pv"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Search tool like grep and The Silver Searcher
@@ -70,8 +92,12 @@ brew "ripgrep"
 brew "shared-mime-info"
 # Opinionated Lua code formatter
 brew "stylua"
+# Tool to build, change, and version infrastructure
+brew "terraform"
 # Code-search similar to ack
 brew "the_silver_searcher"
+# Instant terminal sharing
+brew "tmate"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -80,14 +106,14 @@ brew "tree"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Web browser focusing on privacy
 cask "brave-browser"
 # API documentation browser and code snippet manager
 cask "dash"
+# App to build and share containerised applications and microservices
+cask "docker"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
@@ -95,9 +121,13 @@ cask "font-monaspace-nerd-font"
 cask "font-symbols-only-nerd-font"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Plugin for AWS CLI to start and end sessions that connect to managed instances
+cask "session-manager-plugin"
 # Team communication and collaboration software
 cask "slack"
 # Native GUI tool for relational databases
 cask "tableplus"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# HTML to PDF renderer
+cask "wkhtmltopdf"
