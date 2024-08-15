@@ -38,5 +38,14 @@ return {
 
     -- setup must be called before loading
     vim.cmd.colorscheme("Duskfox")
+
+    -- Fix difficult to read foreground color for GitSignsCurrentLineBlame
+    local palette = require("nightfox.palette").load("duskfox")
+    local color = require("nightfox.lib.color")
+
+    local fg = color.from_hex(palette.white.dim)
+
+    vim.cmd("highlight GitSignsCurrentLineBlame guifg=" .. fg:to_css())
+    vim.cmd("highlight GitSignsCurrentLineBlame gui=italic")
   end,
 }
