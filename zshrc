@@ -59,6 +59,10 @@ autoload -Uz compinit && compinit
 
 # Stop spring from starting. https://github.com/rails/rails/issues/38560
 export DISABLE_SPRING=true
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+# export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 
+# Direnv setup
+eval "$(direnv hook zsh)"
+
+# Atuin setup
 eval "$(atuin init zsh)"
