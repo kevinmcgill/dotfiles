@@ -24,12 +24,12 @@
 return {
   "EdenEast/nightfox.nvim",
   config = function()
-    require('nightfox').setup({
+    require("nightfox").setup({
       options = {
-        styles = {               -- Style to be applied to different syntax groups
-          comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
+        styles = {             -- Style to be applied to different syntax groups
+          comments = "italic", -- Value is any valid attr-list value `:help attr-list`
         },
-        inverse = {             -- Inverse highlight for different types
+        inverse = {            -- Inverse highlight for different types
           match_paren = true,
           search = true,
         },
