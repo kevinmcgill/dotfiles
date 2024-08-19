@@ -1,6 +1,7 @@
 [user]
-	name = Kevin McGill
-	email = kevmcgill@gmail.com
+  name = Kevin McGill
+  email = kevmcgill@gmail.com
+  signingkey = ~/.ssh/id_ed25519.pub
 [color]
   diff = auto
   status = auto
@@ -43,8 +44,14 @@
   rebase = true
 [help]
   autocorrect = 1
+[gpg]
+  format = ssh
 [gpg "ssh"]
-  allowedSignersFile = /Users/kevinmcgill/.ssh/allowed_signers
+  allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+  gpgsign = true
+[tag]
+  gpgsign = true
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
