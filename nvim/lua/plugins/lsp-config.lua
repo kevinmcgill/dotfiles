@@ -62,7 +62,12 @@ return {
         },
       })
 
-      lspconfig.standardrb.setup({
+      -- lspconfig.standardrb.setup({
+      --   -- Server-specific settings. See `:help lspconfig-setup`
+      --   capabilities = capabilities,
+      -- })
+
+      lspconfig.rubocop.setup({
         -- Server-specific settings. See `:help lspconfig-setup`
         capabilities = capabilities,
       })
