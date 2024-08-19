@@ -1,0 +1,13 @@
+name: adminfacer
+root: ~/Sites/adminfacer/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - server:
+    - aws-vault exec marketplacer yarn install && yarn dev --port=3333
+  - terminal:
+    - la
+

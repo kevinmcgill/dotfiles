@@ -6,10 +6,14 @@ windows:
     - lazygit
   - code:
     - nvim .
-  - console:
-    # - bin/rails console
+  - docker:
+    - docker compose up db elasticsearch redis cache
   - server:
-    # - bin/dev
+    - bundle exec rails server -p 3000
+  - yarn:
+    - yarn start
+  - sidekiq:
+    - bundle exec sidekiq
   - terminal:
     - la
 

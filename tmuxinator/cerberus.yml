@@ -1,0 +1,19 @@
+name: cerberus
+root: ~/Sites/cerberus/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - docker:
+    - docker compose up db redis
+  - server:
+    - bundle exec rails server
+  - yarn:
+    - yarn dev
+  - sidekiq:
+    - rails event:clear sidekiq:clear && bundle exec sidekiq -c 20
+  - terminal:
+    - la
+
