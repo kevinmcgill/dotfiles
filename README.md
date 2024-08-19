@@ -25,3 +25,7 @@ brew bundle dump --force --all --global --describe
 ```
 
 This will update the existing linked **global** `Brewfile` in `~/`, it also adds a description for each package.
+
+### Git
+
+All commits are signed, see `gitconfig` for more details. Please add an `~/.ssh/allowed_signers` file to map commit email addresses to public keys. Run `git log --show-signature` to verify the signature of a commit.
