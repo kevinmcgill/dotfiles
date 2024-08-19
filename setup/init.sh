@@ -67,6 +67,11 @@ echo "Installing Elixir"
 # Source the elixir.sh script relative to the SCRIPT_DIR
 source "$SCRIPT_DIR/elixir.sh"
 
+# Rust
+echo "Installing Rust"
+# Source the rust.sh script relative to the SCRIPT_DIR
+source "$SCRIPT_DIR/rust.sh"
+
 # Ruby
 echo "Installing Ruby"
 # Source the ruby.sh script relative to the SCRIPT_DIR

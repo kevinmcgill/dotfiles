@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Requires `rustc`
+export RUBY_CONFIGURE_OPTS=--enable-yjit
+
 # Install dependencies for building Ruby
 brew install openssl readline libyaml gmp
 
