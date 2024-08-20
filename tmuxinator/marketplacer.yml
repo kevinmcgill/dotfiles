@@ -7,7 +7,7 @@ windows:
   - code:
     - nvim .
   - docker:
-    - docker compose up db elasticsearch redis cache
+    - docker compose up db elasticsearch redis cache ml-engine
   - server:
     - bundle exec rails server -p 3000
   - yarn:
