@@ -55,6 +55,12 @@ export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
+
+# valid .nvmrc files can specify the major version only. eg `20`
+# "latest_installed" Will get the latest version already installed that matches the version query.
+# Just installing a new version that matches the dynamic version would be enough to update it.
+# If no matching version is installed it fallbacks to the latest version available to download.
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 # / ASDF
 
 # Stop spring from starting. https://github.com/rails/rails/issues/38560
