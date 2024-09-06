@@ -25,11 +25,43 @@ return {
       -- I don't want to search in the `.git` directory.
       table.insert(vimgrep_arguments, "--glob")
       table.insert(vimgrep_arguments, "!**/.git/*")
+
+      -- open multiple selected items in separate buffers (<TAB> to select, <CR> to open)
+      local select_one_or_multi = function(prompt_bufnr)
+        local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+        local multi = picker:get_multi_selection()
+        if not vim.tbl_isempty(multi) then
+          require("telescope.actions").close(prompt_bufnr)
+          for _, j in pairs(multi) do
+      if j.path ~= nil then
+        vim.cmd(string.format('%s %s', 'edit', j.path))
+      end
+            if j.path ~= nil then
+              if j.lnum ~= nil then
+                vim.cmd(string.format('%s +%s %s', 'edit', j.lnum, j.path))
+              else
+                vim.cmd(string.format('%s %s', 'edit', j.path))
+              end
+            end
+          end
+        else
+          require("telescope.actions").select_default(prompt_bufnr)
+        end
+      end
+
       local setup = require("telescope").setup
       setup({
         defaults = {
           -- `hidden = true` is not supported in text grep commands.
           vimgrep_arguments = vimgrep_arguments,
+          mappings = {
+            i = {
+              ["<CR>"] = select_one_or_multi,
+            },
+            n = {
+              ["<CR>"] = select_one_or_multi,
+            },
+          },
         },
         pickers = {
           buffers = {
