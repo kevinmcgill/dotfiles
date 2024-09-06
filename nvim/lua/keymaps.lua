@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
 
 -- Terminal --
-vim.api.nvim_set_keymap("n", "<leader>t", ":split | resize 10 | terminal<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>T", ":split | resize 10 | terminal<CR>", opts)
 -- Better navigation
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
