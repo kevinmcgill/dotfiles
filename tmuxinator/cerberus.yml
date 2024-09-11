@@ -6,14 +6,17 @@ windows:
     - lazygit
   - code:
     - nvim .
-  - docker:
-    - docker compose up db redis
+  - console:
+    - cerberus_console
   - server:
-    - bundle exec rails server
-  - yarn:
+    - cerberus_server
+  - frontend:
     - yarn dev
   - sidekiq:
-    - rails event:clear sidekiq:clear && bundle exec sidekiq -c 20
+    - cerberus_sidekiq
   - terminal:
     - la
+  - docker:
+    - docker compose up --detach db redis
+    - lazydocker
 

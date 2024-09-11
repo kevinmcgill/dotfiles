@@ -6,8 +6,8 @@ windows:
     - lazygit
   - code:
     - nvim .
-  - server:
-    - aws-vault exec marketplacer yarn install && yarn dev --port=3333
+  - frontend:
+    - adminfacer_frontend
   - terminal:
     - la
 

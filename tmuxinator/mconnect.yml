@@ -1,0 +1,20 @@
+name: mconnect
+root: ~/Sites/integrations/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - console:
+    - mconnect_console
+  - server:
+    - mconnect_server
+  - sidekiq:
+    - mconnect_sidekiq
+  - terminal:
+    - la
+  - docker:
+    - docker compose up --detach db cache # "cache" may already be running from marketplacer
+    - lazydocker
+

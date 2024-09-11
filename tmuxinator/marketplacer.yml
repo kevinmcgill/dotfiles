@@ -6,14 +6,17 @@ windows:
     - lazygit
   - code:
     - nvim .
-  - docker:
-    - docker compose up db elasticsearch redis cache ml-engine
+  - console:
+    - marketplacer_console
   - server:
-    - bundle exec rails server -p 3000
-  - yarn:
+    - marketplacer_server
+  - frontend:
     - yarn start
   - sidekiq:
-    - bundle exec sidekiq
+    - marketplacer_sidekiq
   - terminal:
     - la
+  - docker:
+    - docker compose up --detach db elasticsearch redis cache ml-engine
+    - lazydocker
 
