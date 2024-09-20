@@ -1,0 +1,11 @@
+name: data-platform
+root: ~/Sites/data-platform/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - terminal:
+    - la
+

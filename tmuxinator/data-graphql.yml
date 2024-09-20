@@ -1,0 +1,11 @@
+name: data-graphql
+root: ~/Sites/data-graphql/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - terminal:
+    - la
+
