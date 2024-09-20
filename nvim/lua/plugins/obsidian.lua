@@ -16,6 +16,7 @@ return {
   },
   config = function()
     local opts = {
+      disable_frontmatter = true,
       workspaces = {
         {
           name = "Outboard Brain",
