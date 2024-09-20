@@ -6,7 +6,8 @@
 
 - link:
     ~/.asdfrc: asdf/asdfrc
-    ~/.Brewfile: homebrew/Brewfile
+    ~/Brewfile: homebrew/Brewfile
+    ~/Brewfile.lock.json: homebrew/Brewfile.lock.json
     ~/.gitconfig: gitconfig
     ~/.irbrc: irbrc
     ~/.tmux.conf: tmux.conf
