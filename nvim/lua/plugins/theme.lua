@@ -48,5 +48,7 @@ return {
     vim.cmd("highlight GitSignsCurrentLineBlame guifg=" .. fg:to_css())
     vim.cmd("highlight GitSignsCurrentLineBlame gui=italic")
     vim.cmd("highlight WinSeparator guifg=#cccccc") -- set the window separator color to a light gray
+    vim.cmd("highlight Whitespace guifg=" .. fg:to_css()) -- "nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
+    vim.cmd("highlight NonText guifg=" .. fg:to_css()) -- other characters that do not really exist in the text
   end,
 }
