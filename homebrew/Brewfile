@@ -5,8 +5,6 @@ tap "jesseduffield/lazydocker"
 brew "atuin"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Securely store and access AWS credentials in development environments
-brew "aws-vault"
 # Mozilla CA certificate store
 brew "ca-certificates"
 # Cryptography and SSL/TLS Toolkit
@@ -111,6 +109,8 @@ brew "yarn"
 brew "jesseduffield/lazydocker/lazydocker"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Securely stores and accesses AWS credentials in a development environment
+cask "aws-vault"
 # Web browser focusing on privacy
 cask "brave-browser"
 # API documentation browser and code snippet manager
@@ -126,6 +126,8 @@ cask "font-symbols-only-nerd-font"
 cask "google-chrome"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
 # Team communication and collaboration software
