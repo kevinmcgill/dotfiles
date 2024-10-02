@@ -1,0 +1,11 @@
+name: data-infrastructure
+root: ~/Sites/data-infrastructure/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - terminal:
+    - la
+
