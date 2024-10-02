@@ -1,3 +1,3 @@
 #!/bin/sh
 
-brew bundle --file homebrew/Brewfile
+brew bundle install --all --file homebrew/Brewfile
