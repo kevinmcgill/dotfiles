@@ -72,3 +72,6 @@ eval "$(direnv hook zsh)"
 
 # Atuin setup
 eval "$(atuin init zsh)"
+
+# fzf setup
+source <(fzf --zsh)
