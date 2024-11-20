@@ -79,8 +79,8 @@ brew "mysql@8.0"
 brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
-# Manage compile and link flags for libraries
-brew "pkg-config"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Object-relational database system
 brew "postgresql@14"
 # Monitor data's progress through a pipe
