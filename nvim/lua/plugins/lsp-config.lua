@@ -18,7 +18,7 @@ return {
           "jsonls",
           "yamlls",
         },
-        automatic_installation = { exclude = { "ruby_lsp", "solargraph", "standardrb", "rubocop" } }, -- true, except for those listed
+        automatic_installation = { exclude = { "ruby_lsp", "sorbet", "solargraph", "standardrb", "rubocop" } }, -- true, except for those listed
       })
     end,
   },
@@ -37,7 +37,7 @@ return {
 
       -- LSP configuration without Mason
 
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruby_lsp
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ruby_lsp
       lspconfig.ruby_lsp.setup({
         -- Server-specific settings. See `:help lspconfig-setup`
         capabilities = capabilities,
@@ -47,7 +47,23 @@ return {
         },
       })
 
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#sorbet
+      -- Sorbet is used by some (but not all) Ruby projects.
+      -- ONLY enable this if you are working on a project that uses Sorbet.
+      -- we determine this by checking for the presence of a Sorbet config file.
+      -- We expect Sorbet to be installed at the project level.
+      if vim.fn.filereadable("sorbet/config") == 1 then
+        lspconfig.sorbet.setup({
+          -- Server-specific settings. See `:help lspconfig-setup`
+          capabilities = capabilities,
+          cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
+          -- init_options = {
+          --   highlightUntyped = true,
+          -- },
+        })
+      end
+
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#solargraph
       lspconfig.solargraph.setup({
         -- Server-specific settings. See `:help lspconfig-setup`
         capabilities = capabilities,
@@ -62,15 +78,29 @@ return {
         },
       })
 
-      -- lspconfig.standardrb.setup({
-      --   -- Server-specific settings. See `:help lspconfig-setup`
-      --   capabilities = capabilities,
-      -- })
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#standardrb
+      -- Standardrb is used by some (but not all) Ruby projects.
+      -- ONLY enable this if you are working on a project that uses Standardrb.
+      -- we determine this by checking for the presence of a standardrb config file.
+      -- We expect Standardrb to be installed at the project level.
+      if vim.fn.filereadable(".standard.yml") == 1 then
+        lspconfig.standardrb.setup({
+          -- Server-specific settings. See `:help lspconfig-setup`
+          capabilities = capabilities,
+        })
+      end
 
-      lspconfig.rubocop.setup({
-        -- Server-specific settings. See `:help lspconfig-setup`
-        capabilities = capabilities,
-      })
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#rubocop
+      -- Rubocop is used by some (but not all) Ruby projects.
+      -- ONLY enable this if you are working on a project that uses Rubocop.
+      -- we determine this by checking for the presence of a rubocop config file.
+      -- We expect Rubocop to be installed at the project level.
+      if vim.fn.filereadable(".rubocop.yml") == 1 then
+        lspconfig.rubocop.setup({
+          -- Server-specific settings. See `:help lspconfig-setup`
+          capabilities = capabilities,
+        })
+      end
 
       -- END of LSP configuration without Mason
 
@@ -87,7 +117,7 @@ return {
           })
         end,
         -- Next, you can provide targeted overrides for specific servers.
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
         ["jsonls"] = function()
           lspconfig.jsonls.setup({
             capabilities = capabilities,
@@ -99,7 +129,7 @@ return {
             },
           })
         end,
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
         ["lua_ls"] = function()
           lspconfig.lua_ls.setup({
             capabilities = capabilities,
@@ -112,7 +142,7 @@ return {
             },
           })
         end,
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#yamlls
         ["yamlls"] = function()
           lspconfig.yamlls.setup({
             capabilities = capabilities,
