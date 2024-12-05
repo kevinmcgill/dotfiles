@@ -15,6 +15,8 @@ brew "readline"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
@@ -35,6 +37,8 @@ brew "codespell"
 brew "direnv"
 # Isolated development environments using Docker
 brew "docker-compose"
+# NaCl networking and cryptography library
+brew "libsodium"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -45,8 +49,6 @@ brew "libavif"
 brew "gh"
 # Git extension for versioning large files
 brew "git-lfs"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Library to render SVG files using Cairo
@@ -67,8 +69,6 @@ brew "lazygit"
 brew "lefthook"
 # X.509 and CMS library
 brew "libksba"
-# NaCl networking and cryptography library
-brew "libsodium"
 # YAML Parser
 brew "libyaml"
 # General-purpose lossless data-compression library
