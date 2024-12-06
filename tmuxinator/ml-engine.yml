@@ -1,0 +1,11 @@
+name: ml-engine
+root: ~/Sites/ml-engine/
+
+windows:
+  - git:
+    - lazygit
+  - code:
+    - nvim .
+  - terminal:
+    - la
+
