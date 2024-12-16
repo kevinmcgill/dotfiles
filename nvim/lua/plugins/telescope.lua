@@ -74,10 +74,27 @@ return {
                 ["<c-d>"] = require("telescope.actions").delete_buffer,
               },
             },
+            theme = "ivy",
           },
           find_files = {
             -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
             find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+            theme = "ivy",
+          },
+          live_grep = {
+            theme = "ivy",
+          },
+          marks = {
+            theme = "ivy",
+          },
+          current_buffer_fuzzy_find = {
+            theme = "ivy",
+          },
+          quickfix = {
+            theme = "ivy",
+          },
+          grep_string = {
+            theme = "ivy",
           },
         },
       })
