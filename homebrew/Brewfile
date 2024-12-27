@@ -126,6 +126,8 @@ cask "firefox"
 cask "font-blex-mono-nerd-font"
 cask "font-monaspace-nerd-font"
 cask "font-symbols-only-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Knowledge base that works on top of a local folder of plain text Markdown files

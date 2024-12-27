@@ -1,0 +1,25 @@
+# https://ghostty.org/docs/config/reference#font-family
+# Argon: Humanist sans
+font-family = "MonaspiceAr Nerd Font Mono"
+# https://ghostty.org/docs/config/reference#font-style
+font-style = "Light"
+
+# Radon: Handwriting
+font-family-italic = "MonaspiceRn Nerd Font Mono"
+
+# https://ghostty.org/docs/config/reference#font-size
+font-size = 15
+
+# https://ghostty.org/docs/config/reference#adjust-cell-height
+# recreate a line-height = 1.1. However, this is not a perfect match as the font will be centered vertically in the cell.
+adjust-cell-height = "10%"
+
+# https://ghostty.org/docs/config/reference#adjust-font-baseline
+adjust-font-baseline = -1
+
+# https://ghostty.org/docs/config/reference#window-padding-y
+# adjust bottom padding to allow for the larger cell height (an extra blank status line was appearing in neovim)
+window-padding-y = 0,0
+
+# https://ghostty.org/docs/config/reference#theme
+theme = "tokyonight-storm"

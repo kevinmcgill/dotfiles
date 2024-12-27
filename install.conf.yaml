@@ -20,6 +20,9 @@
     ~/.config/bat:
         path: bat
         create: true
+    ~/.config/ghostty:
+        path: ghostty
+        create: true
     ~/.config/lazygit:
         path: lazygit
         create: true
