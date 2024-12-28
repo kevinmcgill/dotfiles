@@ -26,3 +26,4 @@ vim.cmd([[set iskeyword+=-]])
 vim.cmd("set foldmethod=expr") -- treesitter folding, see https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#folding
 vim.cmd("set foldexpr=nvim_treesitter#foldexpr()") -- treesitter folding
 vim.cmd("set nofoldenable") -- Disable folding at startup
+vim.cmd("set diffopt+=vertical") -- start diff mode in vertical split. See `:help diffopt`. Use :diffsplit and :diffthis to compare files
