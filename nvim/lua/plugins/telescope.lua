@@ -13,6 +13,10 @@ return {
       vim.keymap.set("n", "<leader>q", builtin.quickfix, {})
       vim.keymap.set("n", "<leader>r", builtin.resume, {})
       vim.keymap.set("n", "<leader>w", builtin.grep_string, {})
+      -- LSP specific mappings, replaces the quickfix
+      vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+      vim.keymap.set("n", "gD", builtin.lsp_implementations, {})
+      vim.keymap.set("n", "gr", builtin.lsp_references, {})
 
       local telescope_config = require("telescope.config")
 
@@ -94,6 +98,15 @@ return {
             theme = "ivy",
           },
           grep_string = {
+            theme = "ivy",
+          },
+          lsp_definitions = {
+            theme = "ivy",
+          },
+          lsp_implementations = {
+            theme = "ivy",
+          },
+          lsp_references = {
             theme = "ivy",
           },
         },
