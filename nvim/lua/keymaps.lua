@@ -68,6 +68,11 @@ vim.api.nvim_set_keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>",
 -- vim.api.nvim_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gl", ":lua vim.diagnostic.open_float()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gf", ":lua vim.lsp.buf.format()<CR>", opts)
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover({
+    border = "single",
+  })
+end)
 
 vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
   pattern = { "*" },
