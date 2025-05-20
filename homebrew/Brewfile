@@ -29,6 +29,8 @@ brew "coreutils"
 brew "gnutls"
 # Emacs dependency management
 brew "cask"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Cross-platform make
 brew "cmake"
 # Fix common misspellings in source code and text files
