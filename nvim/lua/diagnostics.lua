@@ -3,10 +3,6 @@ local config = {
     severity = {
       min = vim.diagnostic.severity.WARN,
     },
-    current_line = false, -- show virtual text diagnotistics except on current line
-  },
-  virtual_lines = {
-    current_line = true, -- show virtual lines diagnotostics only on current line
   },
   severity_sort = true,
   signs = {
