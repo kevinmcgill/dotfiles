@@ -2,10 +2,12 @@ name: mconnect
 root: ~/Sites/integrations/
 
 windows:
-  - git:
+  - git 🌳:
     - lazygit
   - code:
     - nvim .
+  - opencode 🤖:
+    - opencode
   - console:
     - mconnect_console
   - server:
