@@ -27,3 +27,7 @@ gui:
       - "#db4b4b"
     defaultFgColor:
       - "#c0caf5"
+# Config relating to git
+git:
+  paging:
+    externalDiffCommand: "difft --color=always" # additional options: --display=inline, --syntax-highlight=off
