@@ -1,0 +1,8 @@
+{
+  "permission": {
+    "bash": {
+      "script/*": "deny", // Rails scripts
+      "*": "allow"
+    }
+  }
+}
