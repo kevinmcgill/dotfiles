@@ -19,15 +19,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# asdf
-if [ ! -d "$HOME/.asdf" ]; then
-  echo "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-
-  # Add the line to .zshrc if it doesn't already exist
-  grep -qxF '. "$HOME/.asdf/asdf.sh"' ~/.zshrc || echo '. "$HOME/.asdf/asdf.sh"' >> ~/.zshrc
-fi
-
 # Homebrew
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew"
@@ -46,6 +37,10 @@ if ! command -v brew &>/dev/null; then
     echo "Added Homebrew to PATH in .zprofile"
   fi
 fi
+
+# asdf
+echo "Installing asdf"
+brew install asdf
 
 # Node.js
 echo "Installing Node.js"

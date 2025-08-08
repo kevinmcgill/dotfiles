@@ -50,9 +50,11 @@ alias tx="tmuxinator" # eg `tx s work`
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 # ASDF. https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-. "$HOME/.asdf/asdf.sh"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 

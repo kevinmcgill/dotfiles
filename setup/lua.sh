@@ -2,4 +2,4 @@
 
 asdf plugin add lua
 asdf install lua latest
-asdf global lua latest
+asdf set --home lua latest
