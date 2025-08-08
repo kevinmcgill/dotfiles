@@ -1,6 +1,9 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
+tap "sst/tap"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -15,6 +18,8 @@ brew "readline"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@77"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
@@ -33,6 +38,8 @@ brew "cloudflared"
 brew "cmake"
 # Fix common misspellings in source code and text files
 brew "codespell"
+# Diff that understands syntax
+brew "difftastic"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Isolated development environments using Docker
@@ -51,14 +58,14 @@ brew "gh"
 brew "git-lfs"
 # OpenType text shaping engine
 brew "harfbuzz"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Popular GNU data compression program
 brew "gzip"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
@@ -113,16 +120,18 @@ brew "wget"
 brew "yarn"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
+# The AI coding agent built for the terminal.
+brew "sst/tap/opencode"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Securely stores and accesses AWS credentials in a development environment
-cask "aws-vault"
+cask "aws-vault-binary"
 # Web browser focusing on privacy
 cask "brave-browser"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerised applications and microservices
-cask "docker"
+cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
