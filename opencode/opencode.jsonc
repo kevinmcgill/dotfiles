@@ -1,8 +1,9 @@
 {
   "permission": {
     "bash": {
-      "script/*": "deny", // Rails scripts
+      "script/*": "deny",
       "*": "allow"
     }
-  }
+  },
+  "$schema": "https://opencode.ai/config.json"
 }
