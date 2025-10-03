@@ -17,6 +17,6 @@ windows:
   - terminal:
     - la
   - docker:
-    - docker compose up --detach db elasticsearch redis cache ml-engine
+    - docker compose up --detach db elasticsearch redis cache ml-engine clamav mailhog gitleaks yamllint
     - lazydocker
 
