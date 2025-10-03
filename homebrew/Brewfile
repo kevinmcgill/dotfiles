@@ -135,7 +135,7 @@ cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
-cask "font-monaspace-nerd-font"
+cask "font-monaspice-nerd-font"
 cask "font-symbols-only-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
