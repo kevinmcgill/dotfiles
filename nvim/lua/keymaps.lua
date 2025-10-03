@@ -54,11 +54,17 @@ vim.api.nvim_set_keymap("n", "<leader>Q", ":cclose<CR>", opts)
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", opts)
--- copy path to clipboard
-vim.api.nvim_create_user_command("CopyBufPath", function()
+-- copy full path to clipboard
+vim.api.nvim_create_user_command("CopyFullPath", function()
   local path = vim.fn.expand("%:p")
   vim.fn.setreg("+", path)
   vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+-- copy relative path to clipboard
+vim.api.nvim_create_user_command("CopyRelativePath", function()
+  local path = vim.fn.expand("%:.") -- path relative to cwd
+  vim.fn.setreg("+", path)
+  vim.notify(('Copied "%s" to the clipboard!'):format(path))
 end, {})
 
 -- LSP. See telescope.lua for goto definitions, references, and implementations
