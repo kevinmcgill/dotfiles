@@ -2,21 +2,23 @@ name: marketplacer
 root: ~/Sites/marketplacer/
 
 windows:
-  - git:
+  -  git:
     - lazygit
-  - code:
+  -  code:
     - nvim .
-  - console:
+  -  opencode:
+    - opencode
+  - 󰆍 console:
     - marketplacer_console
-  - server:
+  -  server:
     - marketplacer_server
-  - frontend:
+  -  frontend:
     - yarn start
-  - sidekiq:
+  - 󰠬 sidekiq:
     - marketplacer_sidekiq
-  - terminal:
+  -  terminal:
     - la
-  - docker:
+  -  docker:
     - docker compose up --detach db elasticsearch redis cache ml-engine clamav mailhog gitleaks yamllint
     - lazydocker
 

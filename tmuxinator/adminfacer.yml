@@ -2,12 +2,14 @@ name: adminfacer
 root: ~/Sites/adminfacer/
 
 windows:
-  - git:
+  -  git:
     - lazygit
-  - code:
+  -  code:
     - nvim .
-  - frontend:
+  -  opencode:
+    - opencode
+  -  frontend:
     - adminfacer_frontend
-  - terminal:
+  -  terminal:
     - la
 

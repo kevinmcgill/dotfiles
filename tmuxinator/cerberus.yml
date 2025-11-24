@@ -2,21 +2,23 @@ name: cerberus
 root: ~/Sites/cerberus/
 
 windows:
-  - git:
+  -  git:
     - lazygit
-  - code:
+  -  code:
     - nvim .
-  - console:
+  -  opencode:
+    - opencode
+  - 󰆍 console:
     - cerberus_console
-  - server:
+  -  server:
     - cerberus_server
-  - frontend:
+  -  frontend:
     - yarn dev
-  - sidekiq:
+  - 󰠬 sidekiq:
     - cerberus_sidekiq
-  - terminal:
+  -  terminal:
     - la
-  - docker:
+  -  docker:
     - docker compose up --detach db redis
     - lazydocker
 
