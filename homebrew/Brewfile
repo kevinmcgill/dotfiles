@@ -42,8 +42,6 @@ brew "difftastic"
 brew "direnv"
 # Isolated development environments using Docker
 brew "docker-compose"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@77"
 # NaCl networking and cryptography library
 brew "libsodium"
 # Simple, fast and user-friendly alternative to find
@@ -60,6 +58,8 @@ brew "git-lfs"
 brew "go"
 # OpenType text shaping engine
 brew "harfbuzz"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@77"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
