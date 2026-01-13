@@ -51,6 +51,7 @@ return {
         "mason",
         "mason_backdrop",
         "neo-tree",
+        "netrw",
         "oil",
         "snacks_win",
       }
