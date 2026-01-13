@@ -1,6 +1,8 @@
 -- ESLint and Typescript LSPs are managed by "Mason-lspconfig" and "lspconfig". See `lsp-config.lua` for details.
 -- Custom LSP configurations are defined in `/lsp/*.lua`
-vim.lsp.enable({ "lua_ls", "ruby_lsp", "solargraph", "yamlls", "jsonls" })
+-- vim.lsp.enable({ "lua_ls", "ruby_lsp", "solargraph", "yamlls", "jsonls" })
+-- temporary disable solargraph in favor of ruby_lsp
+vim.lsp.enable({ "lua_ls", "ruby_lsp", "yamlls", "jsonls" })
 if vim.fn.filereadable("sorbet/config") == 1 then
   vim.lsp.enable({ "sorbet" })
 end

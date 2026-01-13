@@ -19,7 +19,7 @@ return {
           "eslint",
           "ts_ls",
         },
-        automatic_enable = { "eslint", "ts_ls" }
+        automatic_enable = { "eslint", "ts_ls" },
       })
     end,
   },
@@ -33,10 +33,14 @@ return {
     config = function()
       -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
       local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- After getting default_capabilities, add explicit encodings and keep using vim.lsp.config('*') so all lspconfig servers inherit them.
+      default_capabilities.general = default_capabilities.general or {}
+      default_capabilities.general.positionEncodings = { "utf-16" }
+      default_capabilities.offsetEncoding = { "utf-16" }
+
       -- Add capabilities for all LSP clients
-      vim.lsp.config('*', {
-        capabilities = default_capabilities,
-      })
+      vim.lsp.config("*", { capabilities = default_capabilities })
     end,
   },
 }
