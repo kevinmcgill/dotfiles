@@ -41,9 +41,17 @@ return {
       local group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true })
 
       local ignore_filetypes = {
+        "DiffviewFileHistory",
+        "TelescopePrompt",
+        "TelescopeResults",
         "checkhealth",
+        "fidget",
         "lazy",
+        "lazy_backdrop",
         "mason",
+        "mason_backdrop",
+        "neo-tree",
+        "oil",
         "snacks_win",
       }
 
