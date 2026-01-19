@@ -46,6 +46,7 @@ return {
         "TelescopeResults",
         "checkhealth",
         "fidget",
+        "kulala_http",
         "lazy",
         "lazy_backdrop",
         "mason",
@@ -54,6 +55,7 @@ return {
         "netrw",
         "oil",
         "snacks_win",
+        "trouble",
       }
 
       -- Auto-install parsers and enable highlighting on FileType
