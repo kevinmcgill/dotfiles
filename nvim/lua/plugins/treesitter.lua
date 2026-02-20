@@ -10,8 +10,8 @@ return {
     config = function()
       local ts = require("nvim-treesitter")
 
-      -- Install core parsers at startup
-      ts.install({
+      -- Core parsers to ensure are installed (checked once at startup)
+      local core_parsers = {
         "bash",
         "css",
         "diff",
@@ -36,7 +36,17 @@ return {
         "vim",
         "vimdoc",
         "xml",
-      })
+      }
+
+      -- Only install parsers that are actually missing to avoid spawning
+      -- unnecessary async processes on every startup.
+      local missing = vim.tbl_filter(function(lang)
+        return not pcall(vim.treesitter.language.inspect, lang)
+      end, core_parsers)
+
+      if #missing > 0 then
+        ts.install(missing)
+      end
 
       local group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true })
 
@@ -76,8 +86,10 @@ return {
           -- Enable treesitter indentation
           vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
-          -- Install missing parsers (async, no-op if already installed)
-          ts.install({ lang })
+          -- Only install if the parser is actually missing
+          if not pcall(vim.treesitter.language.inspect, lang) then
+            ts.install({ lang })
+          end
         end,
       })
     end,
