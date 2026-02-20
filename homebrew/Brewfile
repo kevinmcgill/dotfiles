@@ -136,6 +136,8 @@ cask "1password-cli"
 cask "aws-vault-binary"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerised applications and microservices
