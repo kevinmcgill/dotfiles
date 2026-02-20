@@ -21,7 +21,7 @@ I am using [dotbot](https://github.com/anishathalye/dotbot) to bootstrap & manag
 To generate a `Brewfile` from the currently installed packages:
 
 ```shell
-brew bundle dump --force --all --global --describe
+brew bundle dump --force --formula --cask --tap --mas --global --describe
 ```
 
 This will update the existing linked **global** `Brewfile` in `~/`, it also adds a description for each package.
