@@ -6,8 +6,11 @@ windows:
     - lazygit
   -  code:
     - nvim .
-  -  opencode:
-    - opencode
+  -  assistants:
+    layout: main-vertical
+    panes:
+      - claude
+      - opencode
   - 󰆍 console:
     - cerberus_console
   -  server:
