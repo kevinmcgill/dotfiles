@@ -1,0 +1,9 @@
+# kulala files for API testing in neovim
+*.http
+# AGENTS.md files for opencode
+AGENTS.md
+# instruction files for opencode
+rspec.instructions.md
+# Claude code related files
+CLAUDE.md
+.claude/*
