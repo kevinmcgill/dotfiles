@@ -86,8 +86,6 @@ brew "lefthook"
 brew "libksba"
 # YAML Parser
 brew "libyaml"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Open source relational database management system
 brew "mysql@8.0"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -128,6 +126,8 @@ brew "watchman"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# General-purpose lossless data-compression library
+brew "zlib"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
 # Command-line interface for 1Password
