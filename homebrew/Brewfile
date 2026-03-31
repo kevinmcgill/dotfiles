@@ -136,6 +136,8 @@ cask "1password-cli"
 cask "aws-vault-binary"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # API documentation browser and code snippet manager
