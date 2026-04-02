@@ -15,5 +15,6 @@ require("options")
 require("keymaps")
 require("filetypes")
 require("lazy").setup("plugins")
+require("packs") -- built-in optional packages, must load after lazy
 require("lsp")
 require("diagnostics")
