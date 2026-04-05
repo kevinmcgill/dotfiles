@@ -39,9 +39,15 @@ return {
       }
 
       -- Only install parsers that are actually missing to avoid spawning
-      -- unnecessary async processes on every startup.
+      -- unnecessary async processes on every startup. Check for both the
+      -- parser binary AND highlight queries — stale .so files from a
+      -- previous install location can trick inspect() into succeeding
+      -- while the query files are absent, resulting in no highlighting.
       local missing = vim.tbl_filter(function(lang)
-        return not pcall(vim.treesitter.language.inspect, lang)
+        local has_parser = pcall(vim.treesitter.language.inspect, lang)
+        local ok, query = pcall(vim.treesitter.query.get, lang, "highlights")
+        local has_queries = ok and query ~= nil
+        return not has_parser or not has_queries
       end, core_parsers)
 
       if #missing > 0 then
@@ -86,8 +92,11 @@ return {
           -- Enable treesitter indentation
           vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
-          -- Only install if the parser is actually missing
-          if not pcall(vim.treesitter.language.inspect, lang) then
+          -- Only install if the parser or its highlight queries are missing
+          local has_parser = pcall(vim.treesitter.language.inspect, lang)
+          local ok, query = pcall(vim.treesitter.query.get, lang, "highlights")
+          local has_queries = ok and query ~= nil
+          if not has_parser or not has_queries then
             ts.install({ lang })
           end
         end,
