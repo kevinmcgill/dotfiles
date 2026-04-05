@@ -165,5 +165,3 @@ cask "slack"
 cask "tableplus"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# HTML to PDF renderer
-cask "wkhtmltopdf"
