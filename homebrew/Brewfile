@@ -1,3 +1,4 @@
+tap "cormacrelf/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
@@ -128,6 +129,8 @@ brew "wget"
 brew "yarn"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Watcher for macOS 10.14+ light/dark mode changes
+brew "cormacrelf/tap/dark-notify"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
 # Command-line interface for 1Password
