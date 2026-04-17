@@ -12,5 +12,6 @@
       "url": "https://mcp.buildkite.com/mcp",
       "oauth": {}
     }
-  }
+  },
+  "theme": "tokyonight"
 }
