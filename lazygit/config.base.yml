@@ -1,0 +1,12 @@
+# lazygit base config (non-theme settings)
+#
+# DO NOT put theme colors here. Theme is in theme-dark.yml / theme-light.yml.
+# The dark-notify script concatenates this file + the active theme file
+# to generate config.yml. Edit THIS file for non-theme changes.
+
+# Temporarily ignore the GPG requirement for specific features like interactive rebases
+# and rewording commit messages
+git:
+  overrideGpg: true
+gui:
+  nerdFontsVersion: "3"

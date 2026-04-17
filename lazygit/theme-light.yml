@@ -1,0 +1,7 @@
+# lazygit light theme: Rose Pine Dawn
+#
+# This file is concatenated with config.base.yml by the dark-notify
+# theme-switch.sh script to generate config.yml.
+# Source: https://github.com/rose-pine/lazygit
+#
+# Well actually I use the default light theme for lazygit, which seems to inherit from the terminal colors.
