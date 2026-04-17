@@ -5,5 +5,12 @@
       "*": "allow"
     }
   },
-  "$schema": "https://opencode.ai/config.json"
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "Buildkite": {
+      "type": "remote",
+      "url": "https://mcp.buildkite.com/mcp",
+      "oauth": {}
+    }
+  }
 }
