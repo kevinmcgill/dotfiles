@@ -5,3 +5,9 @@
 # Source: https://github.com/rose-pine/lazygit
 #
 # Well actually I use the default light theme for lazygit, which seems to inherit from the terminal colors.
+  theme:
+    optionsTextColor:
+      - bold
+
+    selectedLineBgColor:
+      - bold
