@@ -11,7 +11,6 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.irbrc: irbrc
-    ~/.tmux.conf: tmux.conf
     ~/.zshrc:
         path: zshrc
         force: true
@@ -20,6 +19,9 @@
         create: true
     ~/.config/bat:
         path: bat
+        create: true
+    ~/.config/dark-notify:
+        path: dark-notify
         create: true
     ~/.config/ghostty:
         path: ghostty
@@ -36,12 +38,16 @@
     ~/.config/rubocop:
         path: rubocop
         create: true
+    ~/.config/tmux:
+        path: tmux
+        create: true
     ~/.config/tmuxinator:
         path: tmuxinator
         create: true
     ~/.config/wezterm:
         path: wezterm
         create: true
+    ~/Library/LaunchAgents/homebrew.mxcl.dark-notify.plist: dark-notify/homebrew.mxcl.dark-notify.plist
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

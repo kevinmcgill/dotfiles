@@ -43,79 +43,116 @@
 --   end,
 -- }
 return {
-  "folke/tokyonight.nvim",
-  priority = 1000,
-  config = function()
-    require("tokyonight").setup({
-      -- Enable the "storm" style
-      style = "storm",
-      on_colors = function(colours)
-        -- Make the comment colour lighter
-        local util = require("tokyonight.util")
-        colours.comment = util.darken(colours.terminal.white, 0.6)
-      end,
-      on_highlights = function(highlights, colours)
-        local util = require("tokyonight.util")
+  -- Dark theme: TokyoNight Storm
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require("tokyonight").setup({
+        style = "storm",
+        on_colors = function(colours)
+          -- Make the comment colour lighter
+          local util = require("tokyonight.util")
+          colours.comment = util.darken(colours.terminal.white, 0.6)
+        end,
+        on_highlights = function(highlights, colours)
+          local util = require("tokyonight.util")
 
-        -- make the line numbers (relative and absolute) lighter
-        local lineNumberColour = util.darken(colours.terminal.white, 0.5)
+          -- make the line numbers (relative and absolute) lighter
+          local lineNumberColour = util.darken(colours.terminal.white, 0.5)
 
-        -- Absolute line numbers
-        highlights.LineNr = {
-          fg = lineNumberColour,
-          bold = true,
-        }
-        -- Relative line numbers
-        highlights.LineNrAbove = {
-          fg = lineNumberColour,
-          bold = true,
-        }
-        highlights.LineNrBelow = {
-          fg = lineNumberColour,
-          bold = true,
-        }
-        -- Make the current line number bold
-        highlights.CursorLineNr = {
-          fg = colours.orange,
-          bold = true,
-          italic = true,
-        }
-        -- Make the git gutter line numbers easier to read
-        highlights.GitGutterAddLineNr = {
-          fg = util.lighten(colours.green, 0.5),
-          bold = true,
-        }
-        highlights.GitGutterChangeLineNr = {
-          fg = util.lighten(colours.blue, 0.8),
-          bold = true,
-        }
-        highlights.GitGutterDeleteLineNr = {
-          fg = util.lighten(colours.red, 0.9),
-          bold = true,
-        }
+          -- Absolute line numbers
+          highlights.LineNr = {
+            fg = lineNumberColour,
+            bold = true,
+          }
+          -- Relative line numbers
+          highlights.LineNrAbove = {
+            fg = lineNumberColour,
+            bold = true,
+          }
+          highlights.LineNrBelow = {
+            fg = lineNumberColour,
+            bold = true,
+          }
+          -- Make the current line number bold
+          highlights.CursorLineNr = {
+            fg = colours.orange,
+            bold = true,
+            italic = true,
+          }
+          -- Make the git gutter line numbers easier to read
+          highlights.GitGutterAddLineNr = {
+            fg = util.lighten(colours.green, 0.5),
+            bold = true,
+          }
+          highlights.GitGutterChangeLineNr = {
+            fg = util.lighten(colours.blue, 0.8),
+            bold = true,
+          }
+          highlights.GitGutterDeleteLineNr = {
+            fg = util.lighten(colours.red, 0.9),
+            bold = true,
+          }
 
-        -- Make virtual tezt and whitespace characters lighter
-        local extraTextColour = util.darken(colours.terminal.white, 0.9)
+          -- Make virtual text and whitespace characters lighter
+          local extraTextColour = util.darken(colours.terminal.white, 0.9)
 
-        -- other characters that do not really exist in the text
-        highlights.NonText = {
-          fg = extraTextColour,
-        }
-        -- "nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
-        highlights.Whitespace = {
-          fg = extraTextColour,
-        }
-        -- The git blame line virtual text needs to be set manually
-        vim.cmd("highlight GitSignsCurrentLineBlame guifg=" .. extraTextColour)
-        vim.cmd("highlight GitSignsCurrentLineBlame gui=" .. "italic")
+          -- other characters that do not really exist in the text
+          highlights.NonText = {
+            fg = extraTextColour,
+          }
+          -- "nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
+          highlights.Whitespace = {
+            fg = extraTextColour,
+          }
+          -- The git blame line virtual text needs to be set manually
+          vim.cmd("highlight GitSignsCurrentLineBlame guifg=" .. extraTextColour)
+          vim.cmd("highlight GitSignsCurrentLineBlame gui=" .. "italic")
 
-        -- set the window separator color to a light gray
-        highlights.WinSeparator = {
-          fg = "#cccccc",
-          bold = true,
-        }
-      end,
-    })
-    vim.cmd.colorscheme("tokyonight-storm")
-  end,
+          -- Window separator — use a theme-relative color instead of hardcoded hex
+          highlights.WinSeparator = {
+            fg = colours.border_highlight,
+            bold = true,
+          }
+        end,
+      })
+    end,
+  },
+
+  -- Light theme: Rose Pine Dawn
+  -- Loads after tokyonight (priority 999), applies the correct colorscheme
+  -- based on vim.o.background and registers the runtime switch autocmd.
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 999,
+    lazy = false,
+    config = function()
+      require("rose-pine").setup({
+        variant = "dawn",
+      })
+
+      -- Apply colorscheme based on current background.
+      -- Neovim 0.12 detects background via mode 2031 before plugins load,
+      -- so vim.o.background is already correct when this runs.
+      local function apply_colorscheme()
+        if vim.o.background == "light" then
+          vim.cmd.colorscheme("rose-pine-dawn")
+        else
+          vim.cmd.colorscheme("tokyonight")
+        end
+      end
+
+      apply_colorscheme()
+
+      -- Switch at runtime when macOS appearance changes
+      -- (tmux 3.6 forwards mode 2031, Neovim 0.12 updates vim.o.background)
+      vim.api.nvim_create_autocmd("OptionSet", {
+        pattern = "background",
+        callback = apply_colorscheme,
+      })
+    end,
+  },
 }
