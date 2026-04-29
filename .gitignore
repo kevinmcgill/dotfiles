@@ -1,2 +1,13 @@
 .DS_Store
 Brewfile.lock.json
+
+# Lazygit supports merging multiple config files via LG_CONFIG_FILE
+# (set in zshrc → config.base.yml + theme.yml). Keeping these local-only:
+#   - theme.yml: a symlink swapped at runtime by dark-notify/theme-switch.sh
+#     to point at theme-{dark,light}.yml based on macOS appearance.
+#   - config.yml: lazygit auto-creates an empty default in its config dir
+#     on first run; we don't use it (LG_CONFIG_FILE bypasses it entirely).
+# Tracking either would cause spurious diffs depending on which theme was
+# active at commit time.
+lazygit/config.yml
+lazygit/theme.yml

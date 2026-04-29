@@ -26,6 +26,12 @@ export EDITOR='/opt/homebrew/bin/nvim'
 # Set the default config directory
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Lazygit merges multiple config files in order via LG_CONFIG_FILE, so we
+# split base settings from theme colors instead of generating a combined
+# file. theme.yml is a local symlink (swapped by dark-notify/theme-switch.sh
+# on macOS appearance change) pointing at theme-{dark,light}.yml.
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.base.yml,$HOME/.config/lazygit/theme.yml"
+
 # General
 alias cat="bat"
 alias grep="grep --color=auto"
