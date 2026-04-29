@@ -4,6 +4,17 @@
 # The dark-notify script concatenates this file + the active theme file
 # to generate config.yml. Edit THIS file for non-theme changes.
 
+# Reset terminal cooked mode after nvim exits — lazygit's suspend/resume
+# around external commands leaves stdin in raw mode (no ICRNL/ONLCR), which
+# garbles subsequent git/hook output and breaks the "Press enter to return"
+# prompt. `< /dev/tty` is required because git hands the editor subprocess
+# a non-tty stdin, so a bare `stty sane` silently no-ops. Mirrors the same
+# wrapper set in gitconfig's core.editor.
+os:
+  editInTerminal: true
+  edit: 'nvim {{filename}}; stty sane < /dev/tty'
+  editAtLine: 'nvim +{{line}} {{filename}}; stty sane < /dev/tty'
+  editAtLineAndWait: 'nvim +{{line}} {{filename}}; stty sane < /dev/tty'
 # Temporarily ignore the GPG requirement for specific features like interactive rebases
 # and rewording commit messages
 git:

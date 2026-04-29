@@ -38,6 +38,14 @@
 [core]
   excludesfile = ~/.gitignore
   whitespace = warn
+  # Wrap nvim with `stty sane < /dev/tty` so terminal cooked mode is restored
+  # after editing — lazygit's suspend/resume around external commands leaves
+  # stdin in raw mode, garbling subsequent git/hook output and breaking the
+  # "Press enter to return" prompt. `< /dev/tty` is required because git
+  # hands the editor subprocess a non-tty stdin (a bare `stty sane` no-ops).
+  # The whole value is double-quoted so gitconfig doesn't treat `;` as a
+  # comment delimiter.
+  editor = "bash -c 'nvim \"$@\"; stty sane < /dev/tty' --"
 [push]
   default = current
 [pull]
