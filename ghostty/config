@@ -23,3 +23,6 @@ window-padding-y = 0,0
 
 # https://ghostty.org/docs/config/reference#theme
 theme = light:Rose Pine Dawn,dark:TokyoNight Storm
+
+# https://ghostty.org/docs/config/reference#macos-option-as-alt
+macos-option-as-alt = true
