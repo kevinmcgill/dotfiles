@@ -129,13 +129,4 @@ return {
       require("telescope").load_extension("ui-select")
     end,
   },
-  {
-    "danielpieper/telescope-tmuxinator.nvim",
-    config = function()
-      vim.keymap.set("n", "<leader>tx", function()
-        require("telescope").extensions.tmuxinator.projects(require("telescope.themes").get_dropdown({}))
-      end, {})
-      require("telescope").load_extension("tmuxinator")
-    end,
-  },
 }
