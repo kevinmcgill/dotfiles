@@ -61,6 +61,7 @@ return {
         "TelescopePrompt",
         "TelescopeResults",
         "checkhealth",
+        "cmp_menu",
         "fidget",
         "kulala_http",
         "lazy",
@@ -70,6 +71,7 @@ return {
         "neo-tree",
         "netrw",
         "oil",
+        "qf",
         "snacks_win",
         "trouble",
       }
