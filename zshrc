@@ -36,6 +36,7 @@ export LG_CONFIG_FILE="$HOME/.config/lazygit/config.base.yml,$HOME/.config/lazyg
 alias cat="bat"
 alias grep="grep --color=auto"
 alias lg="lazygit"
+alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew upgrade --cask --greedy; brew cleanup"
 
 # Ruby
 alias rs="bundle exec rspec"
