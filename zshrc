@@ -23,6 +23,14 @@ source $ZSH/oh-my-zsh.sh
 # Set Neovim as default editor
 export EDITOR='/opt/homebrew/bin/nvim'
 
+# Force Ruby's default external encoding to UTF-8 regardless of locale. lazygit
+# runs its git subprocesses (and therefore git hooks) with LC_ALL=C for stable
+# output parsing, which would otherwise make Ruby's File.read default to
+# US-ASCII and crash UTF-8-reading hooks (e.g. marketplacer's pre-push
+# pattern_forbidder) with "invalid byte sequence in US-ASCII". lazygit passes
+# this var through untouched, so it fixes such hooks across every repo at once.
+export RUBYOPT='-EUTF-8'
+
 # Set the default config directory
 export XDG_CONFIG_HOME="$HOME/.config"
 
