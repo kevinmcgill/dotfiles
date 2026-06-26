@@ -1,14 +1,12 @@
+tap "anomalyco/tap", "https://github.com/anomalyco/homebrew-tap.git"
 tap "cormacrelf/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
-tap "sst/tap"
 # Mozilla CA certificate store
 brew "ca-certificates"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -87,6 +85,8 @@ brew "lefthook"
 brew "libksba"
 # YAML Parser
 brew "libyaml"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Open source relational database management system
 brew "mysql@8.0"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -125,14 +125,12 @@ brew "tree-sitter-cli"
 brew "watchman"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
 # General-purpose lossless data-compression library
 brew "zlib"
 # Watcher for macOS 10.14+ light/dark mode changes
-brew "cormacrelf/tap/dark-notify"
+brew "cormacrelf/tap/dark-notify", trusted: true
 # A simple terminal UI for docker, written in Go
-brew "jesseduffield/lazydocker/lazydocker"
+brew "jesseduffield/lazydocker/lazydocker", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Securely stores and accesses AWS credentials in a development environment
