@@ -1,0 +1,33 @@
+# Global mise configuration — symlinked to ~/.config/mise/config.toml by dotbot.
+# Replaces ~/.asdfrc (legacy_version_file = yes) and the per-language
+# setup/*.sh scripts that ran `asdf plugin add … && asdf install …`.
+
+[settings]
+# Read idiomatic version files (.ruby-version, .nvmrc). mise disables these by
+# default for performance; this is the direct equivalent of asdf's
+# `legacy_version_file = yes` and is REQUIRED so the shared work repos
+# auto-switch Ruby/Node versions.
+idiomatic_version_file_enable_tools = ["ruby", "node"]
+
+# mise verifies GitHub artifact attestations on prebuilt python by default, but
+# older python-build-standalone releases (e.g. 3.12.4, July 2024) predate
+# attestations, so verification rejects them. Checksum verification still runs;
+# this only drops the extra provable-origin layer (asdf had none either, as it
+# compiled python from source). Re-enable once pinned to a python with
+# attestations.
+python.github_attestations = false
+
+# Run `corepack enable` after installing each node, so projects with a
+# `packageManager` field (e.g. yarn@4) get the right yarn/pnpm via Corepack
+# shims instead of falling through to a global classic yarn. asdf's node had
+# corepack enabled; this restores that across all mise-managed node versions.
+node.corepack = true
+
+[tools]
+node = "22.6.0"
+python = "3.12.4"
+lua = "latest"
+ruby = "3.4.8"
+erlang = "26.1.2"
+elixir = "1.14.0"
+rust = "latest"

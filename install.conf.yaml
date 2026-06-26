@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.asdfrc: asdf/asdfrc
     ~/.Brewfile: homebrew/Brewfile
     ~/.Brewfile.lock.json: homebrew/Brewfile.lock.json
     ~/.gitconfig: gitconfig
@@ -28,6 +27,9 @@
         create: true
     ~/.config/lazygit:
         path: lazygit
+        create: true
+    ~/.config/mise/config.toml:
+        path: mise/config.toml
         create: true
     ~/.config/nvim:
         path: nvim
