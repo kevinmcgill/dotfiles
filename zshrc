@@ -64,21 +64,14 @@ alias tx="tmuxinator" # eg `tx s work`
 # Add wezterm to the path so that we can use wezterm commands like `wezterm ls-fonts`
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
-# ASDF. https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# mise — tool version manager (replaces asdf). Activation puts the right tool
+# versions on PATH per-directory and registers completions. Partial versions
+# in .nvmrc (e.g. `24`) resolve natively, so no NODEJS legacy-file workaround
+# is needed.
+eval "$(mise activate zsh)"
 
-# append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialise completions with ZSH's compinit
+# initialise completions with ZSH's compinit (still needed by oh-my-zsh / fzf)
 autoload -Uz compinit && compinit
-
-# valid .nvmrc files can specify the major version only. eg `20`
-# "latest_installed" Will get the latest version already installed that matches the version query.
-# Just installing a new version that matches the dynamic version would be enough to update it.
-# If no matching version is installed it fallbacks to the latest version available to download.
-export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
-# / ASDF
 
 # Stop spring from starting. https://github.com/rails/rails/issues/38560
 export DISABLE_SPRING=true
