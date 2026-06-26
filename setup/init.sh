@@ -34,39 +34,15 @@ if ! command -v brew &>/dev/null; then
   fi
 fi
 
-# asdf
-echo "Installing asdf"
-brew install asdf
+# mise
+echo "Installing mise"
+brew install mise
 
-# Node.js
-echo "Installing Node.js"
-# Source the nodejs.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/nodejs.sh"
-
-# Python
-echo "Installing Python"
-# Source the python.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/python.sh"
-
-# Lua
-echo "Installing Lua"
-# Source the lua.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/lua.sh"
-
-# Elixir
-echo "Installing Elixir"
-# Source the elixir.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/elixir.sh"
-
-# Rust
-echo "Installing Rust"
-# Source the rust.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/rust.sh"
-
-# Ruby
-echo "Installing Ruby"
-# Source the ruby.sh script relative to the SCRIPT_DIR
-source "$SCRIPT_DIR/ruby.sh"
+# Languages (node, python, lua, elixir/erlang, rust, ruby) via mise.
+# Self-contained: reads the repo's mise config directly, so it does not depend
+# on ./install having run. Executed (not sourced) to contain its set -e / cd.
+echo "Installing languages via mise"
+sh "$SCRIPT_DIR/mise.sh"
 
 # Homebrew packages, Cask binaries and Mac App Store software
 echo "Installing Homebrew packages, Cask binaries and Mac App Store software"
