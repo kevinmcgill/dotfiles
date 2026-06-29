@@ -1,3 +1,7 @@
 #!/bin/sh
 
-brew bundle install --all --file homebrew/Brewfile
+brew bundle install --file homebrew/Brewfile
+brew update
+brew upgrade
+brew upgrade --cask --greedy
+brew cleanup
