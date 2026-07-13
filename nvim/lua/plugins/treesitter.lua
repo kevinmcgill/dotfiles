@@ -74,6 +74,8 @@ return {
         "qf",
         "snacks_win",
         "trouble",
+        "csv",
+        "tsv",
       }
 
       -- Auto-install parsers and enable highlighting on FileType
