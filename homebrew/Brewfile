@@ -1,4 +1,4 @@
-tap "anomalyco/tap", "https://github.com/anomalyco/homebrew-tap.git"
+tap "anomalyco/tap", "https://github.com/anomalyco/homebrew-tap.git", trusted: true
 tap "cormacrelf/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
