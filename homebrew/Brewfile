@@ -37,6 +37,8 @@ brew "cloudflared"
 brew "cmake"
 # Fix common misspellings in source code and text files
 brew "codespell"
+# TIFF library and utilities
+brew "libtiff"
 # Library for encoding and decoding .avif files
 brew "libavif"
 # NaCl networking and cryptography library
