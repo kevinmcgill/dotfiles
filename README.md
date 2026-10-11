@@ -8,7 +8,7 @@ Run `./setup/init.sh` to install tools and applications on a new mac.
 
 I am using [dotbot](https://github.com/anishathalye/dotbot) to bootstrap & manage my dotfiles.
 
-```shell
+```bash
 ./install
 ```
 
@@ -20,7 +20,7 @@ I am using [dotbot](https://github.com/anishathalye/dotbot) to bootstrap & manag
 
 To generate a `Brewfile` from the currently installed packages:
 
-```shell
+```bash
 brew bundle dump --force --formula --cask --tap --mas --global --describe
 ```
 
