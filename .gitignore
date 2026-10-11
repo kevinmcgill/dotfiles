@@ -11,3 +11,7 @@ Brewfile.lock.json
 # active at commit time.
 lazygit/config.yml
 lazygit/theme.yml
+
+# opencode v2 generates service.json on first start. It holds the local
+# password for the background server, so keep it local-only.
+opencode/service.json
