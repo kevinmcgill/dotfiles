@@ -11,6 +11,14 @@ return {
     capabilities.offsetEncoding = { "utf-16" }
     null_ls.setup({
       capabilities = capabilities,
+      -- Skip the neo-tree buffer. If null-ls attaches, each tree redraw runs
+      -- codespell again. Neo-tree sets filetype before buftype=nofile, so the
+      -- default buftype check does not catch it. Also skip the directory buffer
+      -- that `nvim .` opens.
+      should_attach = function(bufnr)
+        return vim.bo[bufnr].filetype ~= "neo-tree"
+          and vim.fn.isdirectory(vim.api.nvim_buf_get_name(bufnr)) == 0
+      end,
       sources = {
         diagnostics.codespell,
         formatting.codespell,
