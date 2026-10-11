@@ -1,0 +1,12 @@
+name: perch
+root: ~/Sites/perch/
+
+windows:
+  -  git:
+    - lazygit
+  -  code:
+    - nvim .
+  -  assistants:
+    - claude
+  -  terminal:
+    - la
