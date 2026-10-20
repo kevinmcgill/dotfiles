@@ -63,7 +63,6 @@ return {
         "checkhealth",
         "cmp_menu",
         "fidget",
-        "kulala_http",
         "lazy",
         "lazy_backdrop",
         "mason",
