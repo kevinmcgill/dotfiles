@@ -1,5 +1,8 @@
-# kulala files for API testing in neovim
+# API request files (hurl, and legacy kulala .http). They can hold API keys.
 *.http
+*.hurl
+# hurl.nvim variables file. It can hold API keys.
+vars.env
 # AGENTS.md files for opencode
 AGENTS.md
 # instruction files for opencode

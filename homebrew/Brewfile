@@ -43,6 +43,8 @@ brew "libtiff"
 brew "libavif"
 # NaCl networking and cryptography library
 brew "libsodium"
+# Granddaddy of HTML tools, with support for modern standards
+brew "tidy-html5"
 # Dependency Manager for PHP
 brew "composer"
 # Diff that understands syntax
@@ -71,6 +73,8 @@ brew "graphviz"
 brew "gzip"
 # Review-first terminal diff viewer for agent-authored changesets
 brew "hunk"
+# Run and Test HTTP Requests with plain text and curl
+brew "hurl"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
 # C/C++ and Java libraries for Unicode and globalization
