@@ -25,6 +25,9 @@
     ~/.config/ghostty:
         path: ghostty
         create: true
+    ~/.config/hunk/config.toml:
+        path: hunk/config.toml
+        create: true
     ~/.config/lazygit:
         path: lazygit
         create: true
