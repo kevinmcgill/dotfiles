@@ -18,4 +18,20 @@ return {
       xml = { "tidy", "-xml", "-i", "-q", "--show-warnings", "no" },
     },
   },
+  config = function(_, opts)
+    require("hurl").setup(opts)
+
+    -- hurl.nvim cannot show the results again after a different buffer
+    -- replaces them in the split window. Lock the results buffer to its window.
+    -- The split moves the cursor into its window only when it opens the window.
+    local split = require("hurl.split")
+    local show = split.show
+    split.show = function(...)
+      local win = vim.api.nvim_get_current_win()
+      show(...)
+      if vim.api.nvim_get_current_win() ~= win then
+        vim.wo.winfixbuf = true
+      end
+    end
+  end,
 }
