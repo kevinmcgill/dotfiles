@@ -1,5 +1,6 @@
 tap "anomalyco/tap", "https://github.com/anomalyco/homebrew-tap.git", trusted: true
 tap "cormacrelf/tap"
+tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
@@ -115,8 +116,6 @@ brew "redis"
 brew "shared-mime-info"
 # Opinionated Lua code formatter
 brew "stylua"
-# Tool to build, change, and version infrastructure
-brew "terraform"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Instant terminal sharing
@@ -135,6 +134,8 @@ brew "wget"
 brew "zlib"
 # Watcher for macOS 10.14+ light/dark mode changes
 brew "cormacrelf/tap/dark-notify", trusted: true
+# Terraform
+brew "hashicorp/tap/terraform", trusted: true
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker", trusted: true
 # Command-line interface for 1Password
