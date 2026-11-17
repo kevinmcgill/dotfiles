@@ -19,8 +19,6 @@ brew "awscli"
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@78"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
@@ -67,6 +65,8 @@ brew "git-lfs"
 brew "go"
 # OpenType text shaping engine
 brew "harfbuzz"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@78"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
@@ -77,10 +77,6 @@ brew "gzip"
 brew "hunk"
 # Run and Test HTTP Requests with plain text and curl
 brew "hurl"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@77"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
