@@ -2,14 +2,16 @@ name: coffee
 root: ~/Sites/coffee-compass/
 
 windows:
-  - git:
+  -  git:
     - lazygit
-  - code:
+  -  code:
     - nvim .
-  - console:
+  -  assistants:
+    - opencode
+  - 󰆍 console:
     - bin/rails console
-  - server:
+  -  server:
     - bin/dev
-  - terminal:
+  -  terminal:
     - la
 
